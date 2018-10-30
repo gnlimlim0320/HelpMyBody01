@@ -3,6 +3,7 @@ package com.example.dlarb.helpmybody01;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -80,13 +81,12 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        FragmentManager manager = getFragmentManager();
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        if (id == R.id.nav_youtube_layout) {
+            manager.beginTransaction().replace(R.id.content_main, new YoutubeLayout()).commit();
+        } else if (id == R.id.nav_alarm_layout) {
+            manager.beginTransaction().replace(R.id.content_main, new AlarmLayout()).commit();
 
         } else if (id == R.id.nav_share) {
 
