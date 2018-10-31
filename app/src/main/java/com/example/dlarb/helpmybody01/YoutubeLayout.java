@@ -33,8 +33,31 @@ public class YoutubeLayout extends Fragment {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                         String item = String.valueOf(parent.getItemAtPosition(i));
-                        Intent intent = new Intent(getActivity(), Neck.class);
-                        startActivity(intent);
+
+                        if(i==1){
+                            Intent intent = new Intent(getActivity(), Waist.class);
+                            startActivity(intent);
+                        }
+                        else if(i==2) {
+                            Intent intent = new Intent(getActivity(), Neck.class);
+                            startActivity(intent);
+                        }
+                        else if(i==3) {
+                            Intent intent = new Intent(getActivity(), Wrist.class);
+                            startActivity(intent);
+                        }
+                        else if(i==4) {
+                            Intent intent = new Intent(getActivity(), Arm.class);
+                            startActivity(intent);
+                        }
+                        else if(i==5) {
+                            Intent intent = new Intent(getActivity(), Leg.class);
+                            startActivity(intent);
+                        }
+                        else if(i==6) {
+                            Intent intent = new Intent(getActivity(), All.class);
+                            startActivity(intent);
+                        }
                     }
                 }
         );
