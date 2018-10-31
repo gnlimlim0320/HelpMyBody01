@@ -1,15 +1,17 @@
-package com.example.dlarb.helpmybody01;
+package com.example.dlarb.helpmybody01.bodypart;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class Neck extends AppCompatActivity {
+import com.example.dlarb.helpmybody01.R;
+
+public class Wrist extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
-        setContentView(R.layout.neck_layout);
+        setContentView(R.layout.wrist_layout);
         Intent intent = getIntent();
     }
 

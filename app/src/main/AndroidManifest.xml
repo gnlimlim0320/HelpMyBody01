@@ -22,22 +22,22 @@
         <activity android:name=".YoutubeLayout">
 
         </activity>
-        <activity android:name=".Waist">
+        <activity android:name=".bodypart.Waist">
 
         </activity>
-        <activity android:name=".Neck">
+        <activity android:name=".bodypart.Neck">
 
         </activity>
-        <activity android:name=".Wrist">
+        <activity android:name=".bodypart.Wrist">
 
         </activity>
-        <activity android:name=".Arm">
+        <activity android:name=".bodypart.Arm">
 
         </activity>
-        <activity android:name=".Leg">
+        <activity android:name=".bodypart.Leg">
 
         </activity>
-        <activity android:name=".All">
+        <activity android:name=".bodypart.All">
 
         </activity>
     </application>

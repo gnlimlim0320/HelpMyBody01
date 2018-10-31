@@ -2,12 +2,9 @@ package com.example.dlarb.helpmybody01;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +12,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import com.example.dlarb.helpmybody01.bodypart.All;
+import com.example.dlarb.helpmybody01.bodypart.Arm;
+import com.example.dlarb.helpmybody01.bodypart.Leg;
+import com.example.dlarb.helpmybody01.bodypart.Neck;
+import com.example.dlarb.helpmybody01.bodypart.Waist;
+import com.example.dlarb.helpmybody01.bodypart.Wrist;
 
 public class YoutubeLayout extends Fragment {
     View v;
