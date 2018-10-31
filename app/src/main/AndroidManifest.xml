@@ -19,7 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".YoutubeLayout" />
+        <activity android:name=".YoutubeLayout">
+
+        </activity>
+        <activity android:name=".Neck">
+
+        </activity>
     </application>
 
 </manifest>
