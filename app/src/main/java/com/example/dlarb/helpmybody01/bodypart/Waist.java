@@ -24,10 +24,7 @@ public class Waist extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.waist_layout);
         Intent intent = getIntent();
-    }
 
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        v = inflater.inflate(R.layout.waist_layout,container,false);
 
         String[] waist_youtube = {"영상1","영상2"};
         ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,waist_youtube);
@@ -36,16 +33,15 @@ public class Waist extends AppCompatActivity {
 
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
-                    Class[] Waist_Youtube=new Class[]{WaistYoutube1.class, WaistYoutube2.class};
+                    Class[] Waist_Youtube = new Class[]{WaistYoutube1.class, WaistYoutube2.class};
+
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Intent intent = new Intent(getApplicationContext(), Waist_Youtube[position]);
                         startActivity(intent);
 
                     }
-                }
-        );
-        return v;
-    }
 
+                });
+    }
 }

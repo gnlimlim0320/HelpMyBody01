@@ -40,6 +40,12 @@
         <activity android:name=".bodypart.All">
 
         </activity>
+        <activity android:name=".bodypart.Waist_Youtube.WaistYoutube1">
+
+        </activity>
+        <activity android:name=".bodypart.Waist_Youtube.WaistYoutube2">
+
+        </activity>
     </application>
 
 </manifest>
