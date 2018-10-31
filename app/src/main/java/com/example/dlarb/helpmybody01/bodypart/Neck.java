@@ -10,8 +10,9 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.dlarb.helpmybody01.R;
-import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube1;
-import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube2;
+import com.example.dlarb.helpmybody01.bodypart.Neck_Youtube.NeckYoutube1;
+import com.example.dlarb.helpmybody01.bodypart.Neck_Youtube.NeckYoutube2;
+
 
 public class Neck extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class Neck extends AppCompatActivity {
 
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
-                    Class[] Neck_Youtube = new Class[]{WaistYoutube1.class, WaistYoutube2.class};
+                    Class[] Neck_Youtube = new Class[]{NeckYoutube1.class, NeckYoutube2.class};
 
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

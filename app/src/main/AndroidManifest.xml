@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dlarb.helpmybody01">
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -44,6 +45,12 @@
 
         </activity>
         <activity android:name=".bodypart.Waist_Youtube.WaistYoutube2">
+
+        </activity>
+        <activity android:name=".bodypart.Neck_Youtube.NeckYoutube1">
+
+        </activity>
+        <activity android:name=".bodypart.Neck_Youtube.NeckYoutube2">
 
         </activity>
     </application>
