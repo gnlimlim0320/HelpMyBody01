@@ -2,6 +2,7 @@ package com.example.dlarb.helpmybody01;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.app.Fragment;
@@ -20,44 +21,28 @@ public class YoutubeLayout extends Fragment {
     View v;
     @Nullable
     @Override
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.youtube_layout, container, false);
 
         String[] items = {"허리","목","손목","팔","다리","전신"};
+
         ListAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
         ListView listView = (ListView) v.findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
+                    Class[] Activities= new Class[]{Waist.class, Neck.class, Wrist.class, Arm.class, Leg.class, All.class};
+
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                         String item = String.valueOf(parent.getItemAtPosition(i));
 
-                        if(i==1){
-                            Intent intent = new Intent(getActivity(), Waist.class);
-                            startActivity(intent);
-                        }
-                        else if(i==2) {
-                            Intent intent = new Intent(getActivity(), Neck.class);
-                            startActivity(intent);
-                        }
-                        else if(i==3) {
-                            Intent intent = new Intent(getActivity(), Wrist.class);
-                            startActivity(intent);
-                        }
-                        else if(i==4) {
-                            Intent intent = new Intent(getActivity(), Arm.class);
-                            startActivity(intent);
-                        }
-                        else if(i==5) {
-                            Intent intent = new Intent(getActivity(), Leg.class);
-                            startActivity(intent);
-                        }
-                        else if(i==6) {
-                            Intent intent = new Intent(getActivity(), All.class);
-                            startActivity(intent);
-                        }
+                        Intent intent = new Intent(getActivity(), Activities[i]);
+                        startActivity(intent);
+
+
                     }
                 }
         );
