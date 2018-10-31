@@ -7,15 +7,17 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.dlarb.helpmybody01.R;
+import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class NeckYoutube1 extends AppCompatActivity {
+public class NeckYoutube1 extends YouTubeBaseActivity {
 
     YouTubePlayerView youtubeView;
     Button button;
     YouTubePlayer.OnInitializedListener listener;
+
 
     @Override
     protected void onCreate(Bundle bundle) {
@@ -42,6 +44,5 @@ public class NeckYoutube1 extends AppCompatActivity {
           youtubeView.initialize("AIzaSyCvDRDZUCGB5-HggR-LTbA34VXrJkGsi1I",listener);
         }
     });
-
     }
 }
