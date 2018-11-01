@@ -1,8 +1,7 @@
-package com.example.dlarb.helpmybody01.bodypart.Neck_Youtube;
+package com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,24 +11,24 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class NeckYoutube2 extends YouTubeBaseActivity {
+public class WristYoutube1 extends YouTubeBaseActivity {
 
     YouTubePlayerView youtubeView;
     Button button;
     YouTubePlayer.OnInitializedListener listener;
 
     @Override
-    protected void onCreate(Bundle bundle) {
+    protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
-        setContentView(R.layout.neck_youtube2);
+        setContentView(R.layout.wrist_youtube1);
         Intent intent = getIntent();
 
-        button = (Button) findViewById(R.id.nybutton2);
-        youtubeView = (YouTubePlayerView) findViewById(R.id.neck_youtubeview2);
-        listener = new YouTubePlayer.OnInitializedListener() {
+        button = (Button) findViewById(R.id.wrbutton1);
+        youtubeView = (YouTubePlayerView) findViewById(R.id.wrist_youtubeview1);
+        listener=new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo("2u97jwzp0Jw");
+                youTubePlayer.loadVideo("1mfNXp0hDww");
             }
 
             @Override
@@ -40,9 +39,10 @@ public class NeckYoutube2 extends YouTubeBaseActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                youtubeView.initialize("AIzaSyCvDRDZUCGB5-HggR-LTbA34VXrJkGsi1I", listener);
+                youtubeView.initialize("AIzaSyCvDRDZUCGB5-HggR-LTbA34VXrJkGsi1I",listener);
             }
 
         });
     }
+
 }

@@ -53,6 +53,12 @@
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube2">
 
         </activity>
+        <activity android:name=".bodypart.Wrist_Youtube.WristYoutube1">
+
+        </activity>
+        <activity android:name=".bodypart.Wrist_Youtube.WristYoutube2">
+
+        </activity>
     </application>
 
 </manifest>

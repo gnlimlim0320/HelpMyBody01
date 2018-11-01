@@ -30,7 +30,7 @@ public class NeckYoutube1 extends YouTubeBaseActivity {
         listener=new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo("TpPwI_Lo0YY");
+                youTubePlayer.loadVideo("dJXZRZvqbYg");
             }
 
             @Override
