@@ -71,8 +71,6 @@
 
         </activity>
         <receiver android:name=".Alarm_bodypart.BroadcastD"></receiver>
-
-        출처: http://kwongyo.tistory.com/5?category=880252 [오픈소스 읽어주는 남자]
-        </application>
+    </application>
 
 </manifest>

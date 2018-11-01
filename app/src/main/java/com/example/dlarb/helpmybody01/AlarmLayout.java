@@ -26,7 +26,7 @@ public class AlarmLayout extends Fragment {
         String[] items = {"허리","목"};
 
         ListAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
-        ListView listView = (ListView) v.findViewById(R.id.listView);
+        ListView listView = (ListView) v.findViewById(R.id.alarm_list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(
