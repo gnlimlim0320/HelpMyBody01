@@ -25,6 +25,9 @@
         <activity android:name=".YoutubeLayout">
 
         </activity>
+        <activity android:name=".AlarmLayout">
+
+        </activity>
         <activity android:name=".bodypart.Waist">
 
         </activity>
@@ -61,6 +64,15 @@
         <activity android:name=".bodypart.Wrist_Youtube.WristYoutube2">
 
         </activity>
-    </application>
+        <activity android:name=".Alarm_bodypart.NeckAlarm">
+
+        </activity>
+        <activity android:name=".Alarm_bodypart.WaistAlarm">
+
+        </activity>
+        <receiver android:name=".Alarm_bodypart.BroadcastD"></receiver>
+
+        출처: http://kwongyo.tistory.com/5?category=880252 [오픈소스 읽어주는 남자]
+        </application>
 
 </manifest>

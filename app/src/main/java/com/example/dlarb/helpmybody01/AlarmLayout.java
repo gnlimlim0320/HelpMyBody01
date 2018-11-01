@@ -15,12 +15,6 @@ import android.widget.ListView;
 
 import com.example.dlarb.helpmybody01.Alarm_bodypart.NeckAlarm;
 import com.example.dlarb.helpmybody01.Alarm_bodypart.WaistAlarm;
-import com.example.dlarb.helpmybody01.bodypart.All;
-import com.example.dlarb.helpmybody01.bodypart.Arm;
-import com.example.dlarb.helpmybody01.bodypart.Leg;
-import com.example.dlarb.helpmybody01.bodypart.Neck;
-import com.example.dlarb.helpmybody01.bodypart.Waist;
-import com.example.dlarb.helpmybody01.bodypart.Wrist;
 
 public class AlarmLayout extends Fragment {
     View v;
