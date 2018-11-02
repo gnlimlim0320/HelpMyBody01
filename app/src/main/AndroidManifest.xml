@@ -70,7 +70,6 @@
         <activity android:name=".Alarm_bodypart.WaistAlarm">
 
         </activity>
-        <receiver android:name=".Alarm_bodypart.BroadcastD"></receiver>
     </application>
 
 </manifest>
