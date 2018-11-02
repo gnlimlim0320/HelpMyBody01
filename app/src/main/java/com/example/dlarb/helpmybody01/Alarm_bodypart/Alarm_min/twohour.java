@@ -12,7 +12,7 @@ import java.util.Calendar;
 
 public class twohour extends AppCompatActivity {
     private Context context;
-    final Intent intent = getIntent();
+    Intent intent = getIntent();
     private static int ONE_MINUTE = 6000;
 
 

@@ -8,13 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 
 
 import com.example.dlarb.helpmybody01.Alarm_bodypart.BroadcastD;
-import com.example.dlarb.helpmybody01.Alarm_bodypart.NeckAlarm;
 
 import java.util.Calendar;
 
 public class twenty extends AppCompatActivity {
     private Context context;
-    final Intent intent = getIntent();
+    Intent intent = getIntent();
     private static int ONE_MINUTE = 6000;
 
 

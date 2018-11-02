@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.dlarb.helpmybody01.Alarm_bodypart.NeckAlarm;
 import com.example.dlarb.helpmybody01.Alarm_bodypart.WaistAlarm;
@@ -20,7 +21,7 @@ public class AlarmLayout extends Fragment {
     View v;
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         v=inflater.inflate(R.layout.alarm_layout,container,false);
 
         String[] items = {"허리","목"};

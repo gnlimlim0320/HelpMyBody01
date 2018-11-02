@@ -70,6 +70,19 @@
         <activity android:name=".Alarm_bodypart.WaistAlarm">
 
         </activity>
+        <activity android:name=".Alarm_bodypart.Alarm_min.twenty">
+        </activity>
+        <activity android:name=".Alarm_bodypart.Alarm_min.thirty">
+        </activity>
+        <activity android:name=".Alarm_bodypart.Alarm_min.onehour">
+        </activity>
+        <activity android:name=".Alarm_bodypart.Alarm_min.twohour">
+        </activity>
+        <activity android:name=".Alarm_bodypart.Alarm_min.none">
+        </activity>
+
+        <receiver android:name=".Alarm_bodypart.BroadcastD"></receiver>
+
     </application>
 
 </manifest>
