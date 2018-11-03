@@ -7,30 +7,28 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import com.example.dlarb.helpmybody01.Alarm_bodypart.Alarm_min.none;
-import com.example.dlarb.helpmybody01.Alarm_bodypart.Alarm_min.onehour;
-import com.example.dlarb.helpmybody01.Alarm_bodypart.Alarm_min.thirty;
-import com.example.dlarb.helpmybody01.Alarm_bodypart.Alarm_min.twenty;
-import com.example.dlarb.helpmybody01.Alarm_bodypart.Alarm_min.twohour;
+
 import com.example.dlarb.helpmybody01.R;
 
+import java.sql.Time;
 import java.util.Calendar;
 
 
 public class NeckAlarm extends AppCompatActivity {
    private static int ONE_MINUTE = 6000;
     private int min=0;
+    private AlarmManager am;
+    private Intent intent;
+    private PendingIntent ServicePending;
 
     @Override
 
@@ -38,7 +36,7 @@ public class NeckAlarm extends AppCompatActivity {
         super.onCreate(bundle);
         setContentView(R.layout.alarm_neck);
         Intent intent = getIntent();
-        new AlarmHATT(getApplicationContext()).Alarm();
+       /* new AlarmHATT(getApplicationContext()).Alarm(); */
 
         String[] minutes = {"20분", "30분", "1시간", "2시간", "취소"};
 
@@ -50,17 +48,102 @@ public class NeckAlarm extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                        String item = String.valueOf(parent.getItemAtPosition(i));
-                        if(i==0) min=6000;
-                        else if(i==1) min=12000;
-                        else if(i==2) min=60;
-                        else if(i==3) min=120;
-                        else min=0;
+                        if(i==0) {
+                            setAlarm();
+                        }
+                        else if(i==1) {
+                            setAlarm2();
+                        }
+                        else if(i==2) {
+                            setAlarm3();
+                        }
+                        else if(i==3) {
+                            setAlarm4();
+                        }
+                        else {
+                            removeAlarm();
+                        }
+
 
                     }
                 });
     }
 
+    void setAlarm(){
+        AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
+        calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
+        calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
+        ServicePending= PendingIntent.getBroadcast(
+                NeckAlarm.this,111,intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Log.d("ServePending: ",""+ServicePending.toString());
+        am.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),6000, ServicePending);
+        Toast.makeText(getBaseContext(),"알람이 설정되었습니당!",Toast.LENGTH_SHORT).show();
+
+    }
+    void setAlarm2(){
+        AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
+        calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
+        calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
+        ServicePending= PendingIntent.getBroadcast(
+                NeckAlarm.this,111,intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Log.d("ServePending: ",""+ServicePending.toString());
+        am.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),12000, ServicePending);
+        Toast.makeText(getBaseContext(),"알람이 설정되었습니당!",Toast.LENGTH_SHORT).show();
+s
+    }
+    void setAlarm3(){
+        AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
+        calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
+        calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
+        ServicePending= PendingIntent.getBroadcast(
+                NeckAlarm.this,111,intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Log.d("ServePending: ",""+ServicePending.toString());
+        am.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),360000*min, ServicePending);
+        Toast.makeText(getBaseContext(),"알람이 설정되었습니당!",Toast.LENGTH_SHORT).show();
+
+    }
+    void setAlarm4(){
+        AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
+        calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
+        calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
+        ServicePending= PendingIntent.getBroadcast(
+                NeckAlarm.this,111,intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Log.d("ServePending: ",""+ServicePending.toString());
+        am.setRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),720000, ServicePending);
+        Toast.makeText(getBaseContext(),"알람이 설정되었습니당!",Toast.LENGTH_SHORT).show();
+
+    }
+
+    void removeAlarm(){
+        AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        ServicePending = PendingIntent.getBroadcast(
+                NeckAlarm.this, 111, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Toast.makeText(getBaseContext(),"알람이 해제되었습니당!",Toast.LENGTH_SHORT).show();
+
+        am.cancel(ServicePending);
+
+    }
+
+
+
+/*
     public class AlarmHATT{
         private Context context;
         public AlarmHATT(Context context){
@@ -72,7 +155,7 @@ public class NeckAlarm extends AppCompatActivity {
             Intent intent = new Intent(NeckAlarm.this, BroadcastD.class);
 
 
-            PendingIntent sender = PendingIntent.getBroadcast(NeckAlarm.this, 0, intent, 0);
+            PendingIntent sender = PendingIntent.getBroadcast(NeckAlarm.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
             Calendar calendar = Calendar.getInstance();
             calendar.setTimeInMillis(System.currentTimeMillis());
             calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
@@ -80,8 +163,10 @@ public class NeckAlarm extends AppCompatActivity {
             calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
 
             am.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), min, sender);
+            Toast.makeText(getBaseContext(),"알람이 설정되었습니다.",Toast.LENGTH_SHORT).show();
 
         }
     }
+    */
 
 }

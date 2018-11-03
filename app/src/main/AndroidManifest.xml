@@ -81,7 +81,8 @@
         <activity android:name=".Alarm_bodypart.Alarm_min.none">
         </activity>
 
-        <receiver android:name=".Alarm_bodypart.BroadcastD"></receiver>
+
+        <receiver android:name=".Alarm_bodypart.AlarmReceiver"></receiver>
 
     </application>
 

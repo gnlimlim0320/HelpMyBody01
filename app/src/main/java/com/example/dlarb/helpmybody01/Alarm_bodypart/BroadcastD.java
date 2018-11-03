@@ -18,7 +18,7 @@ public class BroadcastD extends BroadcastReceiver {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, NeckAlarm.class), PendingIntent.FLAG_UPDATE_CURRENT);
         Notification.Builder builder = new Notification.Builder(context);
         builder.setSmallIcon(R.drawable.ic_menu_camera).setTicker("HETT").setWhen(System.currentTimeMillis())
-                .setNumber(1).setContentTitle("푸쉬 제목").setContentText("푸쉬내용")
+                .setNumber(1).setContentTitle("푸쉬 제목").setContentText("푸쉬 내용")
                 .setDefaults(Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE).setContentIntent(pendingIntent).setAutoCancel(true);
 
         notificationmanager.notify(1, builder.getNotification());
