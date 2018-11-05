@@ -1,7 +1,6 @@
 package com.example.dlarb.helpmybody01.Alarm_bodypart;
 
 
-
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -16,11 +15,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
 import com.example.dlarb.helpmybody01.R;
+
 import java.util.Calendar;
 
 
-public class WaistAlarm extends AppCompatActivity {
+public class WristAlarm extends AppCompatActivity {
     private int min = 0;
     private AlarmManager am = null;
     private Intent intent;
@@ -30,13 +31,13 @@ public class WaistAlarm extends AppCompatActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.alarm_waist);
+        setContentView(R.layout.alarm_wrist);
         Intent intent = getIntent();
 
         String[] minutes = {"20분", "30분", "1시간", "2시간", "취소"};
 
         ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, minutes);
-        ListView listView = (ListView) findViewById(R.id.waist_alist);
+        ListView listView = (ListView) findViewById(R.id.wrist_alist);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(
@@ -62,14 +63,14 @@ public class WaistAlarm extends AppCompatActivity {
 
     void setAlarm() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WaistAlarm.this, AlarmReceiver_Waist.class);
+        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
         calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
         calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
         ServicePending = PendingIntent.getBroadcast(
-                WaistAlarm.this, 222, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Log.d("ServePending: ", "" + ServicePending.toString());
 
         try {
@@ -83,14 +84,14 @@ public class WaistAlarm extends AppCompatActivity {
 
     void setAlarm2() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WaistAlarm.this, AlarmReceiver_Waist.class);
+        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
         calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
         calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
         ServicePending = PendingIntent.getBroadcast(
-                WaistAlarm.this, 222, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Log.d("ServePending: ", "" + ServicePending.toString());
         try {
             am.cancel(ServicePending);
@@ -103,14 +104,14 @@ public class WaistAlarm extends AppCompatActivity {
 
     void setAlarm3() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WaistAlarm.this, AlarmReceiver_Waist.class);
+        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
         calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
         calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
         ServicePending = PendingIntent.getBroadcast(
-                WaistAlarm.this, 222, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Log.d("ServePending: ", "" + ServicePending.toString());
         try {
             am.cancel(ServicePending);
@@ -123,14 +124,14 @@ public class WaistAlarm extends AppCompatActivity {
 
     void setAlarm4() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WaistAlarm.this, AlarmReceiver_Waist.class);
+        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
         calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
         calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
         ServicePending = PendingIntent.getBroadcast(
-                WaistAlarm.this, 222, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Log.d("ServePending: ", "" + ServicePending.toString());
         try {
             am.cancel(ServicePending);
@@ -143,9 +144,9 @@ public class WaistAlarm extends AppCompatActivity {
 
     void removeAlarm() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WaistAlarm.this, AlarmReceiver_Waist.class);
+        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
         ServicePending = PendingIntent.getBroadcast(
-                WaistAlarm.this, 222, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Toast.makeText(getBaseContext(), "알람이 해제되었습니당!", Toast.LENGTH_SHORT).show();
 
         am.cancel(ServicePending);

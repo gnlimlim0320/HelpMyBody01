@@ -62,7 +62,7 @@ public class NeckAlarm extends AppCompatActivity {
 
     void setAlarm() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver_Neck.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
@@ -76,14 +76,14 @@ public class NeckAlarm extends AppCompatActivity {
             am.cancel(ServicePending);
         } catch (Exception ignored) {
         }
-        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 20, ServicePending);
+        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 1, ServicePending);
         Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
 
     }
 
     void setAlarm2() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver_Neck.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
@@ -103,7 +103,7 @@ public class NeckAlarm extends AppCompatActivity {
 
     void setAlarm3() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver_Neck.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
@@ -123,7 +123,7 @@ public class NeckAlarm extends AppCompatActivity {
 
     void setAlarm4() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver_Neck.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
@@ -143,7 +143,7 @@ public class NeckAlarm extends AppCompatActivity {
 
     void removeAlarm() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(NeckAlarm.this, AlarmReceiver.class);
+        intent = new Intent(NeckAlarm.this, AlarmReceiver_Neck.class);
         ServicePending = PendingIntent.getBroadcast(
                 NeckAlarm.this, 111, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Toast.makeText(getBaseContext(), "알람이 해제되었습니당!", Toast.LENGTH_SHORT).show();

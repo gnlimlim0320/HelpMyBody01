@@ -16,7 +16,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
-public class AlarmReceiver extends BroadcastReceiver {
+public class AlarmReceiver_Waist extends BroadcastReceiver {
 
     Context context;
 
@@ -27,11 +27,11 @@ public class AlarmReceiver extends BroadcastReceiver {
         @SuppressLint("InvalidWakeLockTag") PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,"");
         wakeLock.acquire();
 
-        Log.d("alarm","gogo");
+        Log.d("alarm","WAIST gogo");
 
         PendingIntent pendingIntent;
 
-        Toast toast = Toast.makeText(context,"알람이 울립니다.",Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(context,"허리 스트레칭 시간이에요!",Toast.LENGTH_LONG);
         toast.setGravity(Gravity.TOP,0,200);
         toast.show();
 
@@ -48,8 +48,8 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
                 .setSmallIcon(android.R.drawable.ic_menu_gallery)
                 .setLargeIcon(bitmap)
-                .setContentTitle("알람")
-                .setContentText("딸랑딸랑")
+                .setContentTitle("허리 스트레칭을 해주세요!")
+                .setContentText("시-작!")
                 .setAutoCancel(true)
                 .setSound(soundUri)
                 .setContentIntent(pendingIntent);
