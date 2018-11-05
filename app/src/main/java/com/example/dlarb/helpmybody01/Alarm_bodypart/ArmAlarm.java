@@ -21,7 +21,7 @@ import com.example.dlarb.helpmybody01.R;
 import java.util.Calendar;
 
 
-public class WristAlarm extends AppCompatActivity {
+public class ArmAlarm extends AppCompatActivity {
     private int min = 0;
     private AlarmManager am = null;
     private Intent intent;
@@ -31,13 +31,13 @@ public class WristAlarm extends AppCompatActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(R.layout.alarm_wrist);
+        setContentView(R.layout.alarm_arm);
         Intent intent = getIntent();
 
         String[] minutes = {"20분", "30분", "1시간", "2시간", "취소"};
 
         ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, minutes);
-        ListView listView = (ListView) findViewById(R.id.wrist_alist);
+        ListView listView = (ListView) findViewById(R.id.arm_alist);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(
@@ -63,14 +63,14 @@ public class WristAlarm extends AppCompatActivity {
 
     void setAlarm() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
+        intent = new Intent(ArmAlarm.this, AlarmReceiver_Arm.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
         calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
         calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
         ServicePending = PendingIntent.getBroadcast(
-                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                ArmAlarm.this, 444, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Log.d("ServePending: ", "" + ServicePending.toString());
 
         try {
@@ -84,14 +84,14 @@ public class WristAlarm extends AppCompatActivity {
 
     void setAlarm2() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
+        intent = new Intent(ArmAlarm.this, AlarmReceiver_Arm.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
         calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
         calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
         ServicePending = PendingIntent.getBroadcast(
-                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                ArmAlarm.this, 444, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Log.d("ServePending: ", "" + ServicePending.toString());
         try {
             am.cancel(ServicePending);
@@ -104,14 +104,14 @@ public class WristAlarm extends AppCompatActivity {
 
     void setAlarm3() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
+        intent = new Intent(ArmAlarm.this, AlarmReceiver_Arm.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
         calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
         calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
         ServicePending = PendingIntent.getBroadcast(
-                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                ArmAlarm.this, 444, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Log.d("ServePending: ", "" + ServicePending.toString());
         try {
             am.cancel(ServicePending);
@@ -124,14 +124,14 @@ public class WristAlarm extends AppCompatActivity {
 
     void setAlarm4() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
+        intent = new Intent(ArmAlarm.this, AlarmReceiver_Arm.class);
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
         calendar.set(Calendar.HOUR_OF_DAY, (int) System.currentTimeMillis());
         calendar.set(Calendar.MINUTE, (int) System.currentTimeMillis());
         calendar.set(Calendar.SECOND, (int) System.currentTimeMillis());
         ServicePending = PendingIntent.getBroadcast(
-                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                ArmAlarm.this, 444, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Log.d("ServePending: ", "" + ServicePending.toString());
         try {
             am.cancel(ServicePending);
@@ -144,9 +144,9 @@ public class WristAlarm extends AppCompatActivity {
 
     void removeAlarm() {
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-        intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
+        intent = new Intent(ArmAlarm.this, AlarmReceiver_Arm.class);
         ServicePending = PendingIntent.getBroadcast(
-                WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                ArmAlarm.this, 444, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         Toast.makeText(getBaseContext(), "알람이 해제되었습니당!", Toast.LENGTH_SHORT).show();
 
         am.cancel(ServicePending);
