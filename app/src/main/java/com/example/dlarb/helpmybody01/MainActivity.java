@@ -1,5 +1,6 @@
 package com.example.dlarb.helpmybody01;
 
+import android.app.DialogFragment;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
     }
 
     @Override
@@ -87,7 +90,8 @@ public class MainActivity extends AppCompatActivity
             manager.beginTransaction().replace(R.id.content_main, new YoutubeLayout()).commit();
         } else if (id == R.id.nav_alarm_layout) {
             manager.beginTransaction().replace(R.id.content_main, new AlarmLayout()).commit();
-
+        } else if (id == R.id.nav_alarmsleep_layout){
+            manager.beginTransaction().replace(R.id.content_main, new SleepLayout()).commit();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
@@ -98,4 +102,6 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

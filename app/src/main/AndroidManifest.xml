@@ -25,9 +25,8 @@
         <activity android:name=".YoutubeLayout">
 
         </activity>
-        <activity android:name=".AlarmLayout">
-
-        </activity>
+        <activity android:name=".AlarmLayout"></activity>
+        <activity android:name=".SleepLayout"></activity>
         <activity android:name=".bodypart.Waist">
 
         </activity>
