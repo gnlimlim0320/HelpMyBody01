@@ -26,7 +26,7 @@
 
         </activity>
         <activity android:name=".AlarmLayout"></activity>
-        <activity android:name=".SleepLayout"></activity>
+        <activity android:name="SleepLayout"></activity>
         <activity android:name=".bodypart.Waist">
 
         </activity>
@@ -69,6 +69,8 @@
         <activity android:name=".Alarm_bodypart.WaistAlarm">
 
         </activity>
+        <activity android:name="TimePickerFragment"></activity>
+        <activity android:name="TimePickerFragment2"></activity>
         <receiver android:name=".Alarm_bodypart.AlarmReceiver_Neck"></receiver>
         <receiver android:name=".Alarm_bodypart.AlarmReceiver_Waist"></receiver>
 

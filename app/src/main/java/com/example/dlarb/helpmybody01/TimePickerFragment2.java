@@ -1,23 +1,24 @@
 package com.example.dlarb.helpmybody01;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.Fragment;
 import android.app.TimePickerDialog;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.text.format.DateFormat;
 import android.view.Gravity;
 import android.widget.TextView;
-import android.app.DialogFragment;
-import android.app.Dialog;
-import java.util.Calendar;
 import android.widget.TimePicker;
+
+import java.util.Calendar;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
+public class TimePickerFragment2 extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
@@ -30,7 +31,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
                 ,this, hour, minute, DateFormat.is24HourFormat(getActivity()));
 
         TextView tvTitle = new TextView(getActivity());
-        tvTitle.setText("취침모드 시작시간");
+        tvTitle.setText("취침모드 종료시간");
         tvTitle.setBackgroundColor(Color.parseColor("#EEE8AA"));
         tvTitle.setPadding(5, 3, 5, 3);
         tvTitle.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -42,7 +43,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
     //onTimeSet() callback method
     public void onTimeSet(TimePicker view, int hourOfDay, int minute){
 
-        TextView tv = (TextView) getActivity().findViewById(R.id.tv);
+        TextView tv = (TextView) getActivity().findViewById(R.id.tv2);
 
         String aMpM = "AM";
         if(hourOfDay >11)
@@ -60,7 +61,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
             currentHour = hourOfDay;
         }
 
-        tv.setText("잘자요!\n\n");
+        tv.setText("안녕히 주무셨어요!\n\n");
         tv.setText(tv.getText()+ String.valueOf(currentHour)
                 + " : " + String.valueOf(minute) + " " + aMpM + "\n");
 
