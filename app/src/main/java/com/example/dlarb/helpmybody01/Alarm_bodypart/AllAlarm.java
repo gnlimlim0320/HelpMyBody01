@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dlarb.helpmybody01.R;
@@ -26,6 +27,8 @@ public class AllAlarm extends AppCompatActivity {
     private AlarmManager am = null;
     private Intent intent;
     private PendingIntent ServicePending = null;
+    int sender=0;
+
 
     @Override
 
@@ -46,14 +49,24 @@ public class AllAlarm extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                         if (i == 0) {
                             setAlarm();
+                            sender=1;
+                            findallalarm();
                         } else if (i == 1) {
                             setAlarm2();
+                            sender=2;
+                            findallalarm();
                         } else if (i == 2) {
+                            sender=3;
                             setAlarm3();
+                            findallalarm();
                         } else if (i == 3) {
                             setAlarm4();
+                            sender=4;
+                            findallalarm();
                         } else {
                             removeAlarm();
+                            sender=0;
+                            findallalarm();
                         }
 
 
@@ -140,6 +153,7 @@ public class AllAlarm extends AppCompatActivity {
         am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 120, ServicePending);
         Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
 
+
     }
 
     void removeAlarm() {
@@ -150,6 +164,36 @@ public class AllAlarm extends AppCompatActivity {
         Toast.makeText(getBaseContext(), "알람이 해제되었습니당!", Toast.LENGTH_SHORT).show();
 
         am.cancel(ServicePending);
+
+    }
+
+    void findallalarm(){
+        if(sender==4){
+            TextView alltext = (TextView)findViewById(R.id.existalarm_all);
+            String allyes = "알람이 설정되어있습니다! (2시간)";
+            alltext.setText(allyes);
+        }
+        else if(sender==1){
+            TextView alltext = (TextView)findViewById(R.id.existalarm_all);
+            String allyes = "알람이 설정되어있습니다! (20분)";
+            alltext.setText(allyes);
+        }
+        else if(sender==2){
+            TextView alltext = (TextView)findViewById(R.id.existalarm_all);
+            String allyes = "알람이 설정되어있습니다! (30분)";
+            alltext.setText(allyes);
+        }
+        else if(sender==3){
+            TextView alltext = (TextView)findViewById(R.id.existalarm_all);
+            String allyes = "알람이 설정되어있습니다! (1시간)";
+            alltext.setText(allyes);
+        }
+        else{
+            TextView alltext=(TextView)findViewById(R.id.existalarm_all);
+            String allno = "알람 설정이 되어 있지 않습니다";
+            alltext.setText(allno);
+        }
+
 
     }
 }

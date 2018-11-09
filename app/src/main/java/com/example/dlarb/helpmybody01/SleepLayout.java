@@ -21,6 +21,7 @@ public class SleepLayout extends DialogFragment{
     @Override
     public void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
+
     }
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.alarmsleep_layout, container, false);
@@ -31,6 +32,7 @@ public class SleepLayout extends DialogFragment{
            public void onClick(View v) {
                DialogFragment newFragment = new TimePickerFragment();
                newFragment.show(getFragmentManager(), "TimePicker");
+
            }
        });
        button2.setOnClickListener(new View.OnClickListener() {

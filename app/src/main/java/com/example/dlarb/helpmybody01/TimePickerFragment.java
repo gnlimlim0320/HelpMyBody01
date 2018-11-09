@@ -2,6 +2,7 @@ package com.example.dlarb.helpmybody01;
 
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -36,10 +37,11 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         tvTitle.setGravity(Gravity.CENTER_HORIZONTAL);
         tpd.setCustomTitle(tvTitle);
 
+
         return tpd;
     }
 
-    //onTimeSet() callback method
+
     public void onTimeSet(TimePicker view, int hourOfDay, int minute){
 
         TextView tv = (TextView) getActivity().findViewById(R.id.tv);

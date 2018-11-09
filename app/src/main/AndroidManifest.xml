@@ -22,58 +22,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".YoutubeLayout">
-
-        </activity>
+        <activity android:name=".YoutubeLayout"></activity>
         <activity android:name=".AlarmLayout"></activity>
         <activity android:name="SleepLayout"></activity>
-        <activity android:name=".bodypart.Waist">
-
-        </activity>
-        <activity android:name=".bodypart.Neck">
-
-        </activity>
-        <activity android:name=".bodypart.Wrist">
-
-        </activity>
-        <activity android:name=".bodypart.Arm">
-
-        </activity>
-        <activity android:name=".bodypart.Leg">
-
-        </activity>
-        <activity android:name=".bodypart.All">
-
-        </activity>
-        <activity android:name=".bodypart.Waist_Youtube.WaistYoutube1">
-
-        </activity>
-        <activity android:name=".bodypart.Waist_Youtube.WaistYoutube2">
-
-        </activity>
-        <activity android:name=".bodypart.Neck_Youtube.NeckYoutube1">
-
-        </activity>
-        <activity android:name=".bodypart.Neck_Youtube.NeckYoutube2">
-
-        </activity>
-        <activity android:name=".bodypart.Wrist_Youtube.WristYoutube1">
-
-        </activity>
-        <activity android:name=".bodypart.Wrist_Youtube.WristYoutube2">
-
-        </activity>
-        <activity android:name=".Alarm_bodypart.NeckAlarm">
-
-        </activity>
-        <activity android:name=".Alarm_bodypart.WaistAlarm">
-
-        </activity>
+        <activity android:name=".bodypart.Waist"></activity>
+        <activity android:name=".bodypart.Neck"></activity>
+        <activity android:name=".bodypart.Wrist"></activity>
+        <activity android:name=".bodypart.Arm"></activity>
+        <activity android:name=".bodypart.Leg"></activity>
+        <activity android:name=".bodypart.All"></activity>
+        <activity android:name=".bodypart.Waist_Youtube.WaistYoutube1"></activity>
+        <activity android:name=".bodypart.Waist_Youtube.WaistYoutube2"></activity>
+        <activity android:name=".bodypart.Neck_Youtube.NeckYoutube1"></activity>
+        <activity android:name=".bodypart.Neck_Youtube.NeckYoutube2"></activity>
+        <activity android:name=".bodypart.Wrist_Youtube.WristYoutube1"></activity>
+        <activity android:name=".bodypart.Wrist_Youtube.WristYoutube2"></activity>
+        <activity android:name=".Alarm_bodypart.NeckAlarm"></activity>
+        <activity android:name=".Alarm_bodypart.WaistAlarm"></activity>
+        <activity android:name=".Alarm_bodypart.WristAlarm"></activity>
+        <activity android:name=".Alarm_bodypart.ArmAlarm"></activity>
+        <activity android:name=".Alarm_bodypart.LegAlarm"></activity>
+        <activity android:name=".Alarm_bodypart.AllAlarm"></activity>
         <activity android:name="TimePickerFragment"></activity>
         <activity android:name="TimePickerFragment2"></activity>
         <receiver android:name=".Alarm_bodypart.AlarmReceiver_Neck"></receiver>
         <receiver android:name=".Alarm_bodypart.AlarmReceiver_Waist"></receiver>
-
+        <receiver android:name=".Alarm_bodypart.AlarmReceiver_Wrist"></receiver>
+        <receiver android:name=".Alarm_bodypart.AlarmReceiver_Arm"></receiver>
+        <receiver android:name=".Alarm_bodypart.AlarmReceiver_Leg"></receiver>
+        <receiver android:name=".Alarm_bodypart.AlarmReceiver_All"></receiver>
     </application>
 
 </manifest>
