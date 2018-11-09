@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dlarb.helpmybody01.R;
@@ -79,7 +80,9 @@ public class LegAlarm extends AppCompatActivity {
         }
         am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 20, ServicePending);
         Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
-
+        TextView alltext = (TextView) findViewById(R.id.existalarm_leg);
+        String string = "알람이 설정되어있습니다! (20분)";
+        alltext.setText(string);
     }
 
     void setAlarm2() {
@@ -99,7 +102,9 @@ public class LegAlarm extends AppCompatActivity {
         }
         am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 30, ServicePending);
         Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
-
+        TextView alltext = (TextView) findViewById(R.id.existalarm_leg);
+        String string = "알람이 설정되어있습니다! (30분)";
+        alltext.setText(string);
     }
 
     void setAlarm3() {
@@ -119,7 +124,9 @@ public class LegAlarm extends AppCompatActivity {
         }
         am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 60, ServicePending);
         Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
-
+        TextView alltext = (TextView) findViewById(R.id.existalarm_leg);
+        String string = "알람이 설정되어있습니다! (1시간)";
+        alltext.setText(string);
     }
 
     void setAlarm4() {
@@ -139,7 +146,9 @@ public class LegAlarm extends AppCompatActivity {
         }
         am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 120, ServicePending);
         Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
-
+        TextView alltext = (TextView) findViewById(R.id.existalarm_leg);
+        String string = "알람이 설정되어있습니다! (2시간)";
+        alltext.setText(string);
     }
 
     void removeAlarm() {
@@ -150,7 +159,9 @@ public class LegAlarm extends AppCompatActivity {
         Toast.makeText(getBaseContext(), "알람이 해제되었습니당!", Toast.LENGTH_SHORT).show();
 
         am.cancel(ServicePending);
-
+        TextView alltext = (TextView) findViewById(R.id.existalarm_leg);
+        String string = "알람 설정이 되어 있습니다";
+        alltext.setText(string);
     }
 }
 

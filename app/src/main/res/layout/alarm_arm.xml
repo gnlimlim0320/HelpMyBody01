@@ -7,11 +7,19 @@
     <ListView
         android:id="@+id/arm_alist"
         android:layout_width="match_parent"
-        android:layout_height="312dp"
+        android:layout_height="356dp"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_alignParentLeft="true"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="199dp" />
+        android:layout_marginTop="155dp" />
+
+    <TextView
+        android:id="@+id/existalarm_arm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp" />
 </RelativeLayout>
