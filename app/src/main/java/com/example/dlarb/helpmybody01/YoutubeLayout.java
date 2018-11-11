@@ -30,11 +30,11 @@ public class YoutubeLayout extends Fragment {
     View v;
     @Nullable
     @Override
-
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.youtube_layout, container, false);
         final String[] items = {"허리","목","손목","팔","다리","전신"};
-        ListAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
+       ListAdapter adapter = new ImageAdapter(getActivity(), items);
+        // ListAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
         final ListView listView = (ListView) v.findViewById(R.id.listView);
         listView.setAdapter(adapter);
 
@@ -43,17 +43,18 @@ public class YoutubeLayout extends Fragment {
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     Class[] Activities= new Class[]{Waist.class, Neck.class, Wrist.class, Arm.class, Leg.class, All.class};
-
                     @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                    public void onItemClick(AdapterView<?>parent, View view, int i, long id) {
                         Intent intent = new Intent(getActivity(), Activities[i]);
                         startActivity(intent);
-                    }
-                }
 
-        );
+                    }
+                });
+
+
         return v;
     }
+
 }
 
 

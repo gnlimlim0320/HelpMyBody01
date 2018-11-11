@@ -22,8 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CustomAdapter"></activity>
-        <activity android:name=".ListVO"></activity>
         <activity android:name=".YoutubeLayout"></activity>
         <activity android:name=".AlarmLayout"></activity>
         <activity android:name="SleepLayout"></activity>
