@@ -42,6 +42,12 @@ public class SleepLayout extends DialogFragment{
                newFragment2.show(getFragmentManager(),"TimePicker2");
            }
        });
+
+
+     //  TimePickerFragment.hour;
+      // TimePickerFragment.minute;
+
+
        return v;
     }
 }
