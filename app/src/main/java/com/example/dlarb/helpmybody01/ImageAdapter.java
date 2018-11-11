@@ -19,13 +19,14 @@ public class ImageAdapter extends ArrayAdapter<String> {
     @Override
 
     public View getView(int position, View convertView, ViewGroup parent) {
+        final Integer[] images = {R.drawable.waist, R.drawable.neck, R.drawable.wrist, R.drawable.arm,R.drawable.leg,R.drawable.all};
         LayoutInflater imageinflater = LayoutInflater.from(getContext());
         View view = imageinflater.inflate(R.layout.bodypart_image_layout, parent, false);
         String item = getItem(position);
         TextView textView = (TextView) view.findViewById(R.id.textView2);
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView2);
         textView.setText(item);
-        imageView.setImageResource(R.drawable.waist);
+        imageView.setImageResource(images[position]);
         return view;
     }
 }

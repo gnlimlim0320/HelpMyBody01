@@ -33,7 +33,8 @@ public class YoutubeLayout extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.youtube_layout, container, false);
         final String[] items = {"허리","목","손목","팔","다리","전신"};
-       ListAdapter adapter = new ImageAdapter(getActivity(), items);
+        final Integer[] images = {R.drawable.waist, R.drawable.neck, R.drawable.wrist, R.drawable.arm,R.drawable.leg,R.drawable.all};
+       ListAdapter adapter = new ImageAdapter(getActivity(),items);
         // ListAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
         final ListView listView = (ListView) v.findViewById(R.id.listView);
         listView.setAdapter(adapter);
