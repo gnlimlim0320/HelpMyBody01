@@ -28,7 +28,7 @@ public class AlarmLayout extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         v=inflater.inflate(R.layout.alarm_layout,container,false);
 
-        String[] items = {"허리","목","손목","팔","다리","전신"};
+        String[] items = {"허리 알람","목 알람","손목 알람","팔 알람","다리 알람","전신 알람"};
 
         ListAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
         ListView listView = (ListView) v.findViewById(R.id.alarm_list);

@@ -18,8 +18,16 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@android:color/background_light"
+        android:clickable="false"
+        android:clipChildren="false"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
+        app:insetForeground="@android:color/background_light"
+        app:itemBackground="@color/colorPrimaryDark"
+        app:itemIconTint="@android:color/background_light"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:itemTextColor="@android:color/background_light"
         app:menu="@menu/activity_main_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
