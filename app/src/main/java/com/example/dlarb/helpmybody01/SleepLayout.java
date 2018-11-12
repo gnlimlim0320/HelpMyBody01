@@ -23,6 +23,7 @@ public class SleepLayout extends DialogFragment{
         super.onCreate(saveInstanceState);
 
     }
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.alarmsleep_layout, container, false);
        Button button = (Button)v.findViewById(R.id.btn);
@@ -32,6 +33,7 @@ public class SleepLayout extends DialogFragment{
            public void onClick(View v) {
                DialogFragment newFragment = new TimePickerFragment();
                newFragment.show(getFragmentManager(), "TimePicker");
+
 
            }
        });
@@ -47,7 +49,9 @@ public class SleepLayout extends DialogFragment{
      //  TimePickerFragment.hour;
       // TimePickerFragment.minute;
 
+        //모든 파트의 AlarmReceiver로 보내서 알람 취소?
 
        return v;
     }
+
 }

@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.RingtoneManager;
@@ -23,6 +24,7 @@ public class AlarmReceiver_Neck extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent){
         this.context = context;
+      //  SharedPreferences sharedPreferences = context.getSharedPreferences("myref",Context.MODE_PRIVATE);
         PowerManager powerManager=(PowerManager)context.getSystemService(Context.POWER_SERVICE);
         @SuppressLint("InvalidWakeLockTag") PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,"");
         wakeLock.acquire();
@@ -37,6 +39,9 @@ public class AlarmReceiver_Neck extends BroadcastReceiver {
 
         wakeLock.release();
         notification();
+
+
+
     }
 
     void notification(){
@@ -59,4 +64,5 @@ public class AlarmReceiver_Neck extends BroadcastReceiver {
         notificationManager.notify(1,notificationBuilder.build());
 
     }
+
 }
