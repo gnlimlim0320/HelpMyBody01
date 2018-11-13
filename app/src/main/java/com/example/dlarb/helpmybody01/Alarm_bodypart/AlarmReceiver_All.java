@@ -29,7 +29,6 @@ public class AlarmReceiver_All extends BroadcastReceiver {
     long now = System.currentTimeMillis();
     Date date = new Date(now);
     DateFormat dateFormat = new SimpleDateFormat("HH:mm",java.util.Locale.getDefault());
-    boolean defaultalarm = true;
     boolean sleepalarm = TimePickerFragment2.sleepalarm;
 
     @Override
@@ -45,18 +44,15 @@ public class AlarmReceiver_All extends BroadcastReceiver {
 
             PendingIntent pendingIntent;
 
-            Toast toast = Toast.makeText(context, "전신 스트레칭 시간이에요!", Toast.LENGTH_LONG);
-            toast.setGravity(Gravity.TOP, 0, 200);
-            toast.show();
-
+          if(sleepalarm ==false) {
+              Toast toast = Toast.makeText(context, "전신 스트레칭 시간이에요!", Toast.LENGTH_LONG);
+              toast.setGravity(Gravity.TOP, 0, 200);
+              toast.show();
+          }
             wakeLock.release();
 
-         if(defaultalarm || !sleepalarm) {
              notification();
-         }
-         else{
 
-         }
     }
 
     void notification(){
@@ -65,36 +61,22 @@ public class AlarmReceiver_All extends BroadcastReceiver {
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),android.R.drawable.ic_menu_gallery);
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_ONE_SHOT);
 
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(android.R.drawable.ic_menu_gallery)
-                .setLargeIcon(bitmap)
-                .setContentTitle("전신 스트레칭을 해주세요!")
-                .setContentText("시-작!")
-                .setAutoCancel(true)
-                .setSound(soundUri)
-                .setContentIntent(pendingIntent);
+     if(sleepalarm==false) {
+         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
+                 .setSmallIcon(android.R.drawable.ic_menu_gallery)
+                 .setLargeIcon(bitmap)
+                 .setContentTitle("전신 스트레칭을 해주세요!")
+                 .setContentText("시-작!")
+                 .setAutoCancel(true)
+                 .setSound(soundUri)
+                 .setContentIntent(pendingIntent);
 
-        NotificationManager notificationManager =
-                (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(5,notificationBuilder.build());
+         NotificationManager notificationManager =
+                 (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+         notificationManager.notify(5, notificationBuilder.build());
+     }
+     else if(sleepalarm==true){}
 
     }
-
-    /*int thistime() {
-        Date date1 = dateFormat.parse();
-
-        try {
-
-
-            if ()
-
-                //현재 시간과 입력한 시간을 비교하는 함수
-                //비교해서 맞으면 return 1 아니면 return 0하기
-                //위의 식에서 만약에 return 1이면 알람을 안울리게 하기.
-
-                return 1;
-                }
-       */
-
 
 }

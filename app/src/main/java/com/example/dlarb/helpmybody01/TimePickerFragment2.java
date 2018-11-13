@@ -23,7 +23,7 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
     int minute;
     boolean time1 = TimePickerFragment.time1;
     boolean time2;
-    public static boolean sleepalarm = false;
+    public static boolean sleepalarm;
 
 
 
@@ -65,7 +65,7 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
             time2 = true;
         }
 
-        if(time1==true && time2 == true){
+        if(time1==false && time2 == false){
             sleepalarm = true;
         }
         else{
