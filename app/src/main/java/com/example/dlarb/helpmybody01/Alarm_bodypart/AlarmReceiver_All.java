@@ -16,27 +16,47 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.example.dlarb.helpmybody01.TimePickerFragment;
+import com.example.dlarb.helpmybody01.TimePickerFragment2;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class AlarmReceiver_All extends BroadcastReceiver {
 
     Context context;
+    long now = System.currentTimeMillis();
+    Date date = new Date(now);
+    DateFormat dateFormat = new SimpleDateFormat("HH:mm",java.util.Locale.getDefault());
+    boolean defaultalarm = true;
+    boolean sleepalarm = TimePickerFragment2.sleepalarm;
 
     @Override
-    public void onReceive(final Context context, Intent intent){
-        this.context = context;
-        PowerManager powerManager=(PowerManager)context.getSystemService(Context.POWER_SERVICE);
-        @SuppressLint("InvalidWakeLockTag") PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,"");
-        wakeLock.acquire();
+    public void onReceive(final Context context, Intent intent) {
 
-        Log.d("alarm","ALL gogo");
 
-        PendingIntent pendingIntent;
+            this.context = context;
+            PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            @SuppressLint("InvalidWakeLockTag") PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "");
+            wakeLock.acquire();
 
-        Toast toast = Toast.makeText(context,"전신 스트레칭 시간이에요!",Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.TOP,0,200);
-        toast.show();
+            Log.d("alarm", "ALL gogo");
 
-        wakeLock.release();
-        notification();
+            PendingIntent pendingIntent;
+
+            Toast toast = Toast.makeText(context, "전신 스트레칭 시간이에요!", Toast.LENGTH_LONG);
+            toast.setGravity(Gravity.TOP, 0, 200);
+            toast.show();
+
+            wakeLock.release();
+
+         if(defaultalarm || !sleepalarm) {
+             notification();
+         }
+         else{
+
+         }
     }
 
     void notification(){
@@ -59,4 +79,22 @@ public class AlarmReceiver_All extends BroadcastReceiver {
         notificationManager.notify(5,notificationBuilder.build());
 
     }
+
+    /*int thistime() {
+        Date date1 = dateFormat.parse();
+
+        try {
+
+
+            if ()
+
+                //현재 시간과 입력한 시간을 비교하는 함수
+                //비교해서 맞으면 return 1 아니면 return 0하기
+                //위의 식에서 만약에 return 1이면 알람을 안울리게 하기.
+
+                return 1;
+                }
+       */
+
+
 }

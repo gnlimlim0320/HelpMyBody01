@@ -40,7 +40,9 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="215dp"
         android:onClick="onButtonClicked"
-        android:text="취침모드 시작시간" />
+        android:text="취침모드 시작시간"
+        tools:ignore="OnClick" />
+
 
     <Button
         android:id="@+id/btn2"
@@ -53,5 +55,9 @@
         android:layout_marginLeft="215dp"
         android:layout_marginTop="217dp"
         android:onClick="onButtonClicked"
-        android:text="취침모드 종료시간" />
+        android:text="취침모드 종료시간"
+        tools:ignore="OnClick" />
+=
+
+
 </RelativeLayout>

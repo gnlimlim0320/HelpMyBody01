@@ -17,8 +17,17 @@ import java.util.Calendar;
 
 
 public class TimePickerFragment2 extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
-    static int hour;
-    static int minute;
+    //int prehour = TimePickerFragment.hour;
+    //int preminute = TimePickerFragment.minute;
+    int hour;
+    int minute;
+    boolean time1 = TimePickerFragment.time1;
+    boolean time2;
+    public static boolean sleepalarm = false;
+
+
+
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState){
         final Calendar c = Calendar.getInstance();
@@ -26,8 +35,12 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
         minute = c.get(Calendar.MINUTE);
 
 
-        TimePickerDialog tpd = new TimePickerDialog(getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK
-                ,this, hour, minute, DateFormat.is24HourFormat(getActivity()));
+       // TimePickerDialog tpd = new TimePickerDialog(getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK
+        //        ,this, prehour, preminute, DateFormat.is24HourFormat(getActivity()));
+
+        TimePickerDialog tpd = new TimePickerDialog(getActivity(),this,hour,minute,
+                DateFormat.is24HourFormat(getActivity()));
+
 
         TextView tvTitle = new TextView(getActivity());
         tvTitle.setText("취침모드 종료시간");
@@ -41,6 +54,25 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
 
     //onTimeSet() callback method
     public void onTimeSet(TimePicker view, int hourOfDay, int minute){
+        Calendar datetime = Calendar.getInstance();
+        Calendar c = Calendar.getInstance();
+        datetime.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        datetime.set(Calendar.MINUTE, minute);
+
+        if (datetime.getTimeInMillis() > c.getTimeInMillis()) {
+            time2 = false;
+        } else {
+            time2 = true;
+        }
+
+        if(time1==true && time2 == true){
+            sleepalarm = true;
+        }
+        else{
+            sleepalarm = false;
+        }
+
+
 
         TextView tv = (TextView) getActivity().findViewById(R.id.tv2);
 

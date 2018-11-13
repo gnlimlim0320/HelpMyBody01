@@ -23,14 +23,14 @@ import java.util.Calendar;
 
 
 public class NeckAlarm extends AppCompatActivity {
-    Context context;
     private int min = 0;
     private AlarmManager am = null;
     private Intent intent;
-    SharedPreferences sharedPreferences = context.getSharedPreferences("myref",Context.MODE_PRIVATE);
+    SharedPreferences pref = getSharedPreferences("interval",MODE_PRIVATE);
+
+    int interval;
 
     private PendingIntent ServicePending = null;
-    int interval;
 
     @Override
 
@@ -88,8 +88,8 @@ public class NeckAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_neck);
         String string = "알람이 설정되어있습니다! (20분)";
         alltext.setText(string);
-        interval = 6000*20;
-        SaveData();
+        interval = 6000 * 20;
+       // SaveData();
     }
 
     void setAlarm2() {
@@ -112,8 +112,8 @@ public class NeckAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_neck);
         String string = "알람이 설정되어있습니다! (30분)";
         alltext.setText(string);
-        interval = 6000*30;
-        SaveData();
+        interval = 6000 * 30;
+     //   SaveData();
     }
 
     void setAlarm3() {
@@ -136,8 +136,8 @@ public class NeckAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_neck);
         String string = "알람이 설정되어있습니다! (1시간)";
         alltext.setText(string);
-        interval = 6000*60;
-        SaveData();
+        interval = 6000 * 60;
+       // SaveData();
     }
 
     void setAlarm4() {
@@ -160,8 +160,8 @@ public class NeckAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_neck);
         String string = "알람이 설정되어있습니다! (2시간)";
         alltext.setText(string);
-        interval = 6000*120;
-        SaveData();
+        interval = 6000 * 120;
+      //  SaveData();
 
     }
 
@@ -176,19 +176,20 @@ public class NeckAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_neck);
         String string = "알람 설정이 되어 있지 않습니다";
         alltext.setText(string);
-        interval=0;
-        SaveData();
+        interval = 0;
+       // SaveData();
     }
 
-    void SaveData(){
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+/*   void SaveData(){
+        SharedPreferences.Editor editor = pref.edit();
         editor.putInt("interval",interval);
         editor.commit();
     }
 
     int getNeckInt()
     {
-      return sharedPreferences.getInt("interval",0);
-    }
+      return pref.getInt("interval",0);
+    }*/
 
 }

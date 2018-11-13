@@ -14,7 +14,11 @@ import android.view.Gravity;
 import android.widget.TextView;
 import android.app.DialogFragment;
 import android.app.Dialog;
+
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -26,25 +30,36 @@ import com.example.dlarb.helpmybody01.Alarm_bodypart.AlarmReceiver_Waist;
 import com.example.dlarb.helpmybody01.Alarm_bodypart.AlarmReceiver_Wrist;
 import com.example.dlarb.helpmybody01.Alarm_bodypart.AllAlarm;
 
-public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
+public class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {
     static int hour;
     static int minute;
+    static boolean time1;
+    static int hourcompare;
+    static int mincompare;
     private AlarmManager am = null;
     private Intent intent;
     private PendingIntent pendingIntent;
- //   PendingIntent pendingIntent;
-  //  final Intent intent = new Intent(getActivity(), SleepAlarmReceiver.class);
+    long now = System.currentTimeMillis();
+    Date date = new Date(now);
+    java.text.DateFormat dateFormat = new SimpleDateFormat("HH:mm", java.util.Locale.getDefault());
+
+    //   PendingIntent pendingIntent;
+    //  final Intent intent = new Intent(getActivity(), SleepAlarmReceiver.class);
 
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState){
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
         final Calendar c = Calendar.getInstance();
         hour = c.get(Calendar.HOUR_OF_DAY);
         minute = c.get(Calendar.MINUTE);
-    //    pendingIntent = PendingIntent.getBroadcast(getActivity(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+        //    pendingIntent = PendingIntent.getBroadcast(getActivity(),0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
 
 
-        TimePickerDialog tpd = new TimePickerDialog(getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK
-                ,this, hour, minute, DateFormat.is24HourFormat(getActivity()));
+        //  TimePickerDialog tpd = new TimePickerDialog(getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK
+        //        ,this, hour, minute, DateFormat.is24HourFormat(getActivity()));
+
+        TimePickerDialog tpd = new TimePickerDialog(getActivity(), this, hour, minute,
+                DateFormat.is24HourFormat(getActivity()));
+
 
         TextView tvTitle = new TextView(getActivity());
         tvTitle.setText("취침모드 시작시간");
@@ -53,37 +68,42 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         tvTitle.setGravity(Gravity.CENTER_HORIZONTAL);
         tpd.setCustomTitle(tvTitle);
 
-       // intent.putExtra("state","alarm off");
+        // intent.putExtra("state","alarm off");
         //sendBroadcast(intent);
         return tpd;
     }
 
 
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        Calendar datetime = Calendar.getInstance();
+        Calendar c = Calendar.getInstance();
+        datetime.set(Calendar.HOUR_OF_DAY, hourOfDay);
+        datetime.set(Calendar.MINUTE, minute);
 
-    public void onTimeSet(TimePicker view, int hourOfDay, int minute){
+        if (datetime.getTimeInMillis() > c.getTimeInMillis()) {
+            time1 = true;
+        } else {
+            time1= false;
+        }
+
 
         TextView tv = (TextView) getActivity().findViewById(R.id.tv);
 
         String aMpM = "AM";
-        if(hourOfDay >11)
-        {
+        if (hourOfDay > 11) {
             aMpM = "PM";
         }
 
         int currentHour;
-        if(hourOfDay>11)
-        {
+        if (hourOfDay > 11) {
             currentHour = hourOfDay - 12;
-        }
-        else
-        {
+        } else {
             currentHour = hourOfDay;
         }
 
         tv.setText("잘자요!\n\n");
-        tv.setText(tv.getText()+ String.valueOf(currentHour)
+        tv.setText(tv.getText() + String.valueOf(currentHour)
                 + " : " + String.valueOf(minute) + " " + aMpM + "\n");
 
     }
-
 }

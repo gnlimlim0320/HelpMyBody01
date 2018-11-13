@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +28,9 @@ public class ArmAlarm extends AppCompatActivity {
     private AlarmManager am = null;
     private Intent intent;
     private PendingIntent ServicePending = null;
-    int sender = 0;
+    Context context;
+    SharedPreferences sharedPreferences = context.getSharedPreferences("myref",Context.MODE_PRIVATE);
+    int interval;
 
     @Override
 
@@ -84,6 +87,8 @@ public class ArmAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_arm);
         String string = "알람이 설정되어있습니다! (20분)";
         alltext.setText(string);
+        interval = 6000*20;
+    //    SaveData();
     }
 
     void setAlarm2() {
@@ -106,6 +111,9 @@ public class ArmAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_arm);
         String string = "알람이 설정되어있습니다! (30분)";
         alltext.setText(string);
+        interval = 6000*30;
+     //   SaveData();
+
     }
 
     void setAlarm3() {
@@ -128,6 +136,9 @@ public class ArmAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_arm);
         String string = "알람이 설정되어있습니다! (1시간)";
         alltext.setText(string);
+        interval = 6000*60;
+     //   SaveData();
+
     }
 
     void setAlarm4() {
@@ -150,6 +161,9 @@ public class ArmAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_arm);
         String string = "알람이 설정되어있습니다! (2시간)";
         alltext.setText(string);
+        interval = 6000*120;
+     //   SaveData();
+
     }
 
     void removeAlarm() {
@@ -164,7 +178,21 @@ public class ArmAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_arm);
         String string = "알람 설정이 되어 있지 않습니다";
         alltext.setText(string);
+        interval = 0;
+      //  SaveData();
+
     }
+  /*  void SaveData(){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("interval",interval);
+        editor.commit();
+    }
+
+    int getArmInt()
+    {
+        return sharedPreferences.getInt("interval",0);
+    }
+*/
 }
 
 

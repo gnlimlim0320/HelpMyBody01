@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +28,9 @@ public class AllAlarm extends AppCompatActivity {
     private AlarmManager am = null;
     private Intent intent;
     private PendingIntent ServicePending = null;
-    int sender=0;
+    Context context;
+    SharedPreferences sharedPreferences = context.getSharedPreferences("myref",Context.MODE_PRIVATE);
+    int interval;
 
 
     @Override
@@ -49,19 +52,14 @@ public class AllAlarm extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
                         if (i == 0) {
                             setAlarm();
-                            sender=1;
                         } else if (i == 1) {
                             setAlarm2();
-                            sender=2;
                         } else if (i == 2) {
-                            sender=3;
                             setAlarm3();
                         } else if (i == 3) {
                             setAlarm4();
-                            sender=4;
                         } else {
                             removeAlarm();
-                            sender=0;
                         }
 
 
@@ -85,11 +83,13 @@ public class AllAlarm extends AppCompatActivity {
             am.cancel(ServicePending);
         } catch (Exception ignored) {
         }
-        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 20, ServicePending);
+        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 1, ServicePending);
         Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
         TextView alltext = (TextView) findViewById(R.id.existalarm_all);
         String string = "알람이 설정되어있습니다! (20분)";
         alltext.setText(string);
+        interval = 6000*20;
+       // SaveData();
     }
 
     void setAlarm2() {
@@ -112,6 +112,8 @@ public class AllAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_all);
         String string = "알람이 설정되어있습니다! (30분)";
         alltext.setText(string);
+        interval = 6000*30;
+       // SaveData();
     }
 
     void setAlarm3() {
@@ -134,6 +136,8 @@ public class AllAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_all);
         String string = "알람이 설정되어있습니다! (1시간)";
         alltext.setText(string);
+        interval = 6000*60;
+       // SaveData();
     }
 
     void setAlarm4() {
@@ -156,7 +160,8 @@ public class AllAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_all);
         String string = "알람이 설정되어있습니다! (2시간)";
         alltext.setText(string);
-
+        interval = 6000*120;
+      //  SaveData();
     }
 
     void removeAlarm() {
@@ -171,7 +176,19 @@ public class AllAlarm extends AppCompatActivity {
         TextView alltext = (TextView) findViewById(R.id.existalarm_all);
         String string = "알람 설정이 되어 있지 않습니다";
         alltext.setText(string);
+        interval = 0;
+       // SaveData();
     }
+  /*  void SaveData(){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("interval",interval);
+        editor.commit();
+    }
+
+    int getAllInt()
+    {
+        return sharedPreferences.getInt("interval",0);
+    }*/
 }
 
 

@@ -160,9 +160,12 @@ public class LegAlarm extends AppCompatActivity {
 
         am.cancel(ServicePending);
         TextView alltext = (TextView) findViewById(R.id.existalarm_leg);
-        String string = "알람 설정이 되어 있습니다";
+        String string = "알람 설정이 되어 있지 않습니다";
         alltext.setText(string);
     }
+
+
+
 }
 
 

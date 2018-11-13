@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ToggleButton;
 
 import com.example.dlarb.helpmybody01.R;
 import com.example.dlarb.helpmybody01.TimePickerFragment;
@@ -21,7 +22,6 @@ public class SleepLayout extends DialogFragment{
     @Override
     public void onCreate(Bundle saveInstanceState){
         super.onCreate(saveInstanceState);
-
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,7 +49,6 @@ public class SleepLayout extends DialogFragment{
      //  TimePickerFragment.hour;
       // TimePickerFragment.minute;
 
-        //모든 파트의 AlarmReceiver로 보내서 알람 취소?
 
        return v;
     }
