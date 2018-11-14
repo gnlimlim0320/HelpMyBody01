@@ -16,9 +16,13 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.example.dlarb.helpmybody01.TimePickerFragment2;
+
 public class AlarmReceiver_Leg extends BroadcastReceiver {
 
     Context context;
+    boolean sleepalarm = TimePickerFragment2.sleepalarm;
+
 
     @Override
     public void onReceive(final Context context, Intent intent){
@@ -39,24 +43,30 @@ public class AlarmReceiver_Leg extends BroadcastReceiver {
         notification();
     }
 
-    void notification(){
+    void notification() {
         Intent intent = new Intent();
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),android.R.drawable.ic_menu_gallery);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_ONE_SHOT);
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), android.R.drawable.ic_menu_gallery);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
-                .setSmallIcon(android.R.drawable.ic_menu_gallery)
-                .setLargeIcon(bitmap)
-                .setContentTitle("다리 스트레칭을 해주세요!")
-                .setContentText("시-작!")
-                .setAutoCancel(true)
-                .setSound(soundUri)
-                .setContentIntent(pendingIntent);
+        if (sleepalarm == false) {
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
+                    .setSmallIcon(android.R.drawable.ic_menu_gallery)
+                    .setLargeIcon(bitmap)
+                    .setContentTitle("다리 스트레칭을 해주세요!")
+                    .setContentText("시-작!")
+                    .setAutoCancel(true)
+                    .setSound(soundUri)
+                    .setContentIntent(pendingIntent);
 
-        NotificationManager notificationManager =
-                (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(4,notificationBuilder.build());
+            NotificationManager notificationManager =
+                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(4, notificationBuilder.build());
+
+        }
+        else if(sleepalarm == true){
+
+        }
 
     }
 }

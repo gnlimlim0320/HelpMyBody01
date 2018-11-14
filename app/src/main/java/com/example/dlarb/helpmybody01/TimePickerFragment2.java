@@ -76,10 +76,10 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
 
         TextView tv = (TextView) getActivity().findViewById(R.id.tv2);
 
-        String aMpM = "AM";
+        String dn="오전";
         if(hourOfDay >11)
         {
-            aMpM = "PM";
+            dn="오후";
         }
 
         int currentHour;
@@ -92,9 +92,8 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
             currentHour = hourOfDay;
         }
 
-        tv.setText("안녕히 주무셨어요!\n\n");
-        tv.setText(tv.getText()+ String.valueOf(currentHour)
-                + " : " + String.valueOf(minute) + " " + aMpM + "\n");
+        tv.setText(dn+" "+currentHour+"시 "+minute+"분까지는 알람이 울리지 않아요! \n\n");
+
 
     }
 }

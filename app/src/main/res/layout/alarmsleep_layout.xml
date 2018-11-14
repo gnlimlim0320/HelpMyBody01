@@ -1,5 +1,6 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +16,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="45dp" />
 
     <TextView
@@ -25,9 +26,9 @@
         android:layout_alignStart="@+id/tv"
         android:layout_alignLeft="@+id/tv"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="204dp"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="54dp" />
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp" />
 
     <Button
         android:id="@+id/btn"
@@ -36,9 +37,9 @@
         android:layout_below="@id/tv"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="215dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="160dp"
         android:onClick="onButtonClicked"
         android:text="취침모드 시작시간"
         tools:ignore="OnClick" />
@@ -53,11 +54,61 @@
         android:layout_alignParentLeft="true"
         android:layout_marginStart="215dp"
         android:layout_marginLeft="215dp"
-        android:layout_marginTop="217dp"
+        android:layout_marginTop="160dp"
         android:onClick="onButtonClicked"
         android:text="취침모드 종료시간"
         tools:ignore="OnClick" />
-=
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="181dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginRight="136dp"
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@drawable/character_reverse" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="195dp"
+        android:layout_height="173dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="54dp"
+        app:srcCompat="@drawable/ballon2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="37dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginBottom="130dp"
+        android:text="취침시간대를" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:layout_marginBottom="108dp"
+        android:text="설정해주세요!" />
+
+    =
 
 
 </RelativeLayout>

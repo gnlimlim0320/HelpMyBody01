@@ -26,9 +26,6 @@ import java.util.Date;
 public class AlarmReceiver_All extends BroadcastReceiver {
 
     Context context;
-    long now = System.currentTimeMillis();
-    Date date = new Date(now);
-    DateFormat dateFormat = new SimpleDateFormat("HH:mm",java.util.Locale.getDefault());
     boolean sleepalarm = TimePickerFragment2.sleepalarm;
 
     @Override
