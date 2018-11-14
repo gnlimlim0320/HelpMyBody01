@@ -8,16 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ToggleButton;
 
-import com.example.dlarb.helpmybody01.R;
-import com.example.dlarb.helpmybody01.TimePickerFragment;
 
 public class SleepLayout extends DialogFragment{
 
-    static final int DIALOG_ID=0;
-    int hour_x;
-    int minute_x;
     View v;
     @Override
     public void onCreate(Bundle saveInstanceState){
@@ -44,10 +38,6 @@ public class SleepLayout extends DialogFragment{
                newFragment2.show(getFragmentManager(),"TimePicker2");
            }
        });
-
-
-     //  TimePickerFragment.hour;
-      // TimePickerFragment.minute;
 
 
        return v;

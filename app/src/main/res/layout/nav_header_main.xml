@@ -18,9 +18,9 @@
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
-        android:text="안녕하세요!"
+        android:text="Help My Body!"
         android:visibility="visible"
-        tools:text="안녕하세요!" />
+        tools:text="Help My Body!" />
 
     <ImageView
         android:id="@+id/imageView3"
