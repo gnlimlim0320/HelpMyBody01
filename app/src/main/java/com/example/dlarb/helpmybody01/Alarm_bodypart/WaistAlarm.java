@@ -26,7 +26,6 @@ public class WaistAlarm extends AppCompatActivity {
     private AlarmManager am = null;
     private Intent intent;
     private PendingIntent ServicePending = null;
-    int sender = 0;
 
     @Override
 
