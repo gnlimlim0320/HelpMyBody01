@@ -35,6 +35,10 @@
         <activity android:name=".bodypart.Waist_Youtube.WaistYoutube2"></activity>
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube1"></activity>
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube2"></activity>
+        <activity android:name=".bodypart.Neck_Youtube.NeckYoutube3"></activity>
+        <activity android:name=".bodypart.Neck_Youtube.NeckYoutube4"></activity>
+        <activity android:name=".bodypart.Neck_Youtube.NeckYoutube5"></activity>
+
         <activity android:name=".bodypart.Wrist_Youtube.WristYoutube1"></activity>
         <activity android:name=".bodypart.Wrist_Youtube.WristYoutube2"></activity>
         <activity android:name=".Alarm_bodypart.NeckAlarm"></activity>

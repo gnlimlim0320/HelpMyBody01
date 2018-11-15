@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.example.dlarb.helpmybody01.R;
 import com.example.dlarb.helpmybody01.TimePickerFragment2;
 
 public class AlarmReceiver_Arm extends BroadcastReceiver {
@@ -45,12 +46,12 @@ public class AlarmReceiver_Arm extends BroadcastReceiver {
     void notification(){
         Intent intent = new Intent();
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),android.R.drawable.ic_menu_gallery);
+        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.arm);
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_ONE_SHOT);
 
         if(sleepalarm==false) {
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
-                    .setSmallIcon(android.R.drawable.ic_menu_gallery)
+                    .setSmallIcon(R.drawable.arm)
                     .setLargeIcon(bitmap)
                     .setContentTitle("팔 스트레칭을 해주세요!")
                     .setContentText("시-작!")
