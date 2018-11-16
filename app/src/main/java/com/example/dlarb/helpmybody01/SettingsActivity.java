@@ -1,6 +1,9 @@
 package com.example.dlarb.helpmybody01;
 
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
@@ -13,35 +16,58 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import static android.app.Activity.RESULT_OK;
 
 
 public class SettingsActivity extends android.app.Fragment {
+    public static Uri myUri;
+    public static int soundchange;
     View v;
+    Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
+    final int ringpicker = 1;
+
+    //  Uri soundUri1 = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+    //  Uri soundUri2 = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+    //  Uri soundUri3 = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALL);
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        Button btn;
+
         v = inflater.inflate(R.layout.soundsetting, container, false);
-        final String[] items = {"알람음1","알람음2"};
-        final String[] sounds = {};
-        ListAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
-        ListView listView = (ListView) v.findViewById(R.id.soundsetlist);
-        listView.setAdapter(adapter);
 
+        btn = (Button) v.findViewById(R.id.soundbutton);
 
-        listView.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?>parent, View view, int i, long id) {
-
+        btn.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View v) {
+                        startActivityForResult(intent, ringpicker);
                     }
-                });
-
-
+                }
+        );
         return v;
     }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == ringpicker && resultCode == RESULT_OK) {
+            switch (requestCode) {
+                case 1:
+                    myUri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
+                    soundchange=1;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 }
 
 
