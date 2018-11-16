@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.PowerManager;
@@ -28,6 +29,8 @@ public class AlarmReceiver_All extends BroadcastReceiver {
 
     Context context;
     boolean sleepalarm = TimePickerFragment2.sleepalarm;
+    Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+   // Ringtone r= RingtoneManager.getRingtone(context,notification);
 
     @Override
     public void onReceive(final Context context, Intent intent) {
@@ -66,7 +69,7 @@ public class AlarmReceiver_All extends BroadcastReceiver {
                  .setContentTitle("전신 스트레칭을 해주세요!")
                  .setContentText("시-작!")
                  .setAutoCancel(true)
-                 .setSound(soundUri)
+                 .setSound(notification)
                  .setContentIntent(pendingIntent);
 
          NotificationManager notificationManager =

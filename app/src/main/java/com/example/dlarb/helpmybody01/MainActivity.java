@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-        TextView textView_fla;
+    TextView textView_fla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-        textView_fla = (TextView) findViewById(R.id.textView_fla) ;
+        textView_fla = (TextView) findViewById(R.id.textView_fla);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -82,9 +82,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         FragmentManager manager = getFragmentManager();
-        ImageView imageView_fla = (ImageView)findViewById(R.id.imageView_fla);
-        ImageView imageView_bal = (ImageView)findViewById(R.id.imageView_b);
-        TextView textView_fla = (TextView)findViewById(R.id.textView_fla);
+        ImageView imageView_fla = (ImageView) findViewById(R.id.imageView_fla);
+        ImageView imageView_bal = (ImageView) findViewById(R.id.imageView_b);
+        TextView textView_fla = (TextView) findViewById(R.id.textView_fla);
 
         if (id == R.id.nav_youtube_layout) {
             manager.beginTransaction().replace(R.id.content_main, new YoutubeLayout()).commit();
@@ -96,18 +96,23 @@ public class MainActivity extends AppCompatActivity
             imageView_fla.setVisibility(View.INVISIBLE);
             imageView_bal.setVisibility(View.INVISIBLE);
             textView_fla.setVisibility(View.INVISIBLE);
-        } else if (id == R.id.nav_alarmsleep_layout){
+        } else if (id == R.id.nav_alarmsleep_layout) {
             manager.beginTransaction().replace(R.id.content_main, new SleepLayout()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
             imageView_bal.setVisibility(View.INVISIBLE);
             textView_fla.setVisibility(View.INVISIBLE);
+        } else if (id == R.id.nav_alarmset_layout) {
+            manager.beginTransaction().replace(R.id.content_main, new SettingsActivity()).commit();
+            imageView_fla.setVisibility(View.INVISIBLE);
+            imageView_bal.setVisibility(View.INVISIBLE);
+            textView_fla.setVisibility(View.INVISIBLE);
+
+
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
         }
 
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
         return true;
+
     }
-
-
 }
