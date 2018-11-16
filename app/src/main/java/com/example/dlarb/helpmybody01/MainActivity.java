@@ -96,22 +96,22 @@ public class MainActivity extends AppCompatActivity
             imageView_fla.setVisibility(View.INVISIBLE);
             imageView_bal.setVisibility(View.INVISIBLE);
             textView_fla.setVisibility(View.INVISIBLE);
+
         } else if (id == R.id.nav_alarmsleep_layout) {
             manager.beginTransaction().replace(R.id.content_main, new SleepLayout()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
             imageView_bal.setVisibility(View.INVISIBLE);
             textView_fla.setVisibility(View.INVISIBLE);
+
         } else if (id == R.id.nav_alarmset_layout) {
             manager.beginTransaction().replace(R.id.content_main, new SettingsActivity()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
             imageView_bal.setVisibility(View.INVISIBLE);
             textView_fla.setVisibility(View.INVISIBLE);
 
-
+        }
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
-        }
-
         return true;
 
     }

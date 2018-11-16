@@ -45,7 +45,7 @@ public class AlarmReceiver_Arm extends BroadcastReceiver {
 
     void notification(){
         Intent intent = new Intent();
-        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.arm);
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_ONE_SHOT);
 

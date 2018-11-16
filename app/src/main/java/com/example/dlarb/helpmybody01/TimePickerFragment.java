@@ -66,13 +66,17 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         }
 
         int currentHour;
-        if (hourOfDay > 11) {
+        if (hourOfDay > 11 && hourOfDay!=12) {
             currentHour = hourOfDay - 12;
-        } else {
+        }
+        else if(hourOfDay ==12){
+            currentHour = 12;
+        }
+        else {
             currentHour = hourOfDay;
         }
 
-        tv.setText(dn+" "+currentHour+"시 "+minute+"분까지는 알람이 울리지 않아요! \n\n");
+        tv.setText(dn+" "+currentHour+"시 "+minute+"분부터는 알람이 울리지 않아요! \n\n");
 
     }
 }

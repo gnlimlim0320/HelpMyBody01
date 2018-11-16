@@ -83,9 +83,12 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
         }
 
         int currentHour;
-        if(hourOfDay>11)
+        if(hourOfDay>11 && hourOfDay!=12)
         {
             currentHour = hourOfDay - 12;
+        }
+        else if(hourOfDay==12){
+            currentHour=12;
         }
         else
         {

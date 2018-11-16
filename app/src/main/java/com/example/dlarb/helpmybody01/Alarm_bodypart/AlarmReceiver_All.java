@@ -29,8 +29,8 @@ public class AlarmReceiver_All extends BroadcastReceiver {
 
     Context context;
     boolean sleepalarm = TimePickerFragment2.sleepalarm;
-    Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-   // Ringtone r= RingtoneManager.getRingtone(context,notification);
+
+    // Ringtone r= RingtoneManager.getRingtone(context,notification);
 
     @Override
     public void onReceive(final Context context, Intent intent) {
@@ -58,7 +58,7 @@ public class AlarmReceiver_All extends BroadcastReceiver {
 
     void notification(){
         Intent intent = new Intent();
-        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.all);
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_ONE_SHOT);
 
@@ -69,7 +69,7 @@ public class AlarmReceiver_All extends BroadcastReceiver {
                  .setContentTitle("전신 스트레칭을 해주세요!")
                  .setContentText("시-작!")
                  .setAutoCancel(true)
-                 .setSound(notification)
+                 .setSound(soundUri)
                  .setContentIntent(pendingIntent);
 
          NotificationManager notificationManager =

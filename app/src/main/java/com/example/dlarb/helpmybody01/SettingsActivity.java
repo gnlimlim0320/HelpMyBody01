@@ -16,12 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.example.dlarb.helpmybody01.bodypart.All;
-import com.example.dlarb.helpmybody01.bodypart.Arm;
-import com.example.dlarb.helpmybody01.bodypart.Leg;
-import com.example.dlarb.helpmybody01.bodypart.Neck;
-import com.example.dlarb.helpmybody01.bodypart.Waist;
-import com.example.dlarb.helpmybody01.bodypart.Wrist;
 
 public class SettingsActivity extends android.app.Fragment {
     View v;
@@ -30,6 +24,7 @@ public class SettingsActivity extends android.app.Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.soundsetting, container, false);
         final String[] items = {"알람음1","알람음2"};
+        final String[] sounds = {};
         ListAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items);
         ListView listView = (ListView) v.findViewById(R.id.soundsetlist);
         listView.setAdapter(adapter);
