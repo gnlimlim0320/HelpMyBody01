@@ -7,21 +7,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_youtube_layout"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/youtube"
             android:title="YOUTUBE" />
 
         <item
             android:id="@+id/nav_alarm_layout"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/alarm"
             android:title="ALARM" />
 
         <item
             android:id="@+id/nav_alarmsleep_layout"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/sleep"
             android:title="Time to Sleep!" />
         <item
         android:id="@+id/nav_alarmset_layout"
-        android:icon="@drawable/ic_menu_camera"
+        android:icon="@drawable/sound"
         android:title="Alarm Sound" />
     </group>
 
