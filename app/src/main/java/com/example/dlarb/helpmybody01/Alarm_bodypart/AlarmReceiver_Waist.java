@@ -17,12 +17,15 @@ import android.view.Gravity;
 import android.widget.Toast;
 
 import com.example.dlarb.helpmybody01.R;
+import com.example.dlarb.helpmybody01.SettingsActivity;
 import com.example.dlarb.helpmybody01.TimePickerFragment2;
 
 public class AlarmReceiver_Waist extends BroadcastReceiver {
 
     Context context;
     boolean sleepalarm = TimePickerFragment2.sleepalarm;
+    Uri uri = SettingsActivity.myUri;
+    int soundchange = 0;
 
 
     @Override
@@ -51,19 +54,36 @@ public class AlarmReceiver_Waist extends BroadcastReceiver {
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_ONE_SHOT);
 
         if(sleepalarm==false) {
-            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
-                    .setSmallIcon(R.drawable.waist)
-                    .setLargeIcon(bitmap)
-                    .setContentTitle("허리 스트레칭을 해주세요!")
-                    .setContentText("시-작!")
-                    .setAutoCancel(true)
-                    .setSound(soundUri)
-                    .setContentIntent(pendingIntent);
+            if(soundchange==0) {
+                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
+                        .setSmallIcon(R.drawable.waist)
+                        .setLargeIcon(bitmap)
+                        .setContentTitle("허리 스트레칭을 해주세요!")
+                        .setContentText("시-작!")
+                        .setAutoCancel(true)
+                        .setSound(soundUri)
+                        .setContentIntent(pendingIntent);
 
-            NotificationManager notificationManager =
-                    (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            notificationManager.notify(0, notificationBuilder.build());
+                NotificationManager notificationManager =
+                        (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.notify(0, notificationBuilder.build());
 
+            }
+            else if(soundchange==1){
+                NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
+                        .setSmallIcon(R.drawable.waist)
+                        .setLargeIcon(bitmap)
+                        .setContentTitle("허리 스트레칭을 해주세요!")
+                        .setContentText("시-작!")
+                        .setAutoCancel(true)
+                        .setSound(uri)
+                        .setContentIntent(pendingIntent);
+
+                NotificationManager notificationManager =
+                        (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.notify(0, notificationBuilder.build());
+
+            }
         }
         else if(sleepalarm==true){}
     }
