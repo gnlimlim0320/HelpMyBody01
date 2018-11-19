@@ -18,11 +18,33 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     TextView textView_fla;
+    TextView textView_01;
+    TextView textView_02;
+
+
+    public int calcul(){
+        try {
+            final Calendar start = Calendar.getInstance();
+            Calendar today = Calendar.getInstance();
+
+            final long startday = start.getTimeInMillis() / 86400000;
+            long nowday = today.getTimeInMillis() / 86400000;
+            long count = nowday - startday;
+            return (int) count + 1;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return -1;
+        }
+
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +53,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
-        textView_fla = (TextView) findViewById(R.id.textView_fla);
+        textView_02 = (TextView) findViewById(R.id.textView_02);
+        textView_01=(TextView)findViewById(R.id.textView_01);
+        String days = String.valueOf(calcul());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -45,6 +67,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
+        textView_02.setText(days+"일째");
 
 
     }
@@ -86,6 +109,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+
 
         FragmentManager manager = getFragmentManager();
         ImageView imageView_fla = (ImageView) findViewById(R.id.imageView_fla);
