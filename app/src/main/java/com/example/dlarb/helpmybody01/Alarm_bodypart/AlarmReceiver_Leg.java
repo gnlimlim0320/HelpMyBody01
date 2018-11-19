@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.example.dlarb.helpmybody01.PointActivity;
 import com.example.dlarb.helpmybody01.R;
 import com.example.dlarb.helpmybody01.SettingsActivity;
 import com.example.dlarb.helpmybody01.TimePickerFragment2;
@@ -47,12 +48,15 @@ public class AlarmReceiver_Leg extends BroadcastReceiver {
     }
 
     void notification() {
+
         Intent intent = new Intent();
         Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.leg);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_ONE_SHOT);
 
         if (sleepalarm == false) {
+            Intent intent1 = new Intent(context,PointActivity.class);
+            PendingIntent pi = PendingIntent.getActivity(context, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
             if(soundchange==0) {
                 NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.leg)
@@ -61,7 +65,7 @@ public class AlarmReceiver_Leg extends BroadcastReceiver {
                         .setContentText("시-작!")
                         .setAutoCancel(true)
                         .setSound(soundUri)
-                        .setContentIntent(pendingIntent);
+                        .setContentIntent(pi);
 
                 NotificationManager notificationManager =
                         (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -75,7 +79,7 @@ public class AlarmReceiver_Leg extends BroadcastReceiver {
                         .setContentText("시-작!")
                         .setAutoCancel(true)
                         .setSound(uri)
-                        .setContentIntent(pendingIntent);
+                        .setContentIntent(pi);
 
                 NotificationManager notificationManager =
                         (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

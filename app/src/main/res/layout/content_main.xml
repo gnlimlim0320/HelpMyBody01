@@ -51,4 +51,17 @@
         android:text="TextView"
         android:textSize="50sp" />
 
+    <TextView
+        android:id="@+id/textView_03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="175dp"
+        android:text="TextView"
+        android:textSize="30sp"/>
+
 </RelativeLayout>

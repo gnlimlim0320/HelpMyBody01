@@ -27,6 +27,7 @@
         <activity android:name=".YoutubeLayout" />
         <activity android:name=".AlarmLayout" />
         <activity android:name=".SleepLayout" />
+        <activity android:name=".PointActivity" />
         <activity android:name=".bodypart.Waist" />
         <activity android:name=".bodypart.Neck" />
         <activity android:name=".bodypart.Wrist" />

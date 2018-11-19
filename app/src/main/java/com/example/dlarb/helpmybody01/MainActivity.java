@@ -23,10 +23,10 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    TextView textView_fla;
     TextView textView_01;
     TextView textView_02;
-
+    TextView textView_03;
+    int point = PointActivity.point;
 
     public int calcul(){
         try {
@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         textView_02 = (TextView) findViewById(R.id.textView_02);
+        textView_03 = (TextView) findViewById(R.id.textView_03);
         textView_01=(TextView)findViewById(R.id.textView_01);
         String days = String.valueOf(calcul());
 
@@ -68,8 +69,7 @@ public class MainActivity extends AppCompatActivity
 
 
         textView_02.setText(days+"일째");
-
-
+        textView_03.setText(point+"점");
     }
 
     @Override
@@ -115,29 +115,33 @@ public class MainActivity extends AppCompatActivity
         ImageView imageView_fla = (ImageView) findViewById(R.id.imageView_fla);
         TextView textView_01 = (TextView) findViewById(R.id.textView_01);
         TextView textView_02 = (TextView)findViewById(R.id.textView_02);
+        TextView textView_03 = (TextView)findViewById(R.id.textView_03);
 
         if (id == R.id.nav_youtube_layout) {
             manager.beginTransaction().replace(R.id.content_main, new YoutubeLayout()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
             textView_01.setVisibility(View.INVISIBLE);
             textView_02.setVisibility(View.INVISIBLE);
+            textView_03.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_alarm_layout) {
             manager.beginTransaction().replace(R.id.content_main, new AlarmLayout()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
             textView_01.setVisibility(View.INVISIBLE);
             textView_02.setVisibility(View.INVISIBLE);
+            textView_03.setVisibility(View.INVISIBLE);
 
         } else if (id == R.id.nav_alarmsleep_layout) {
             manager.beginTransaction().replace(R.id.content_main, new SleepLayout()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
             textView_01.setVisibility(View.INVISIBLE);
             textView_02.setVisibility(View.INVISIBLE);
-
+            textView_03.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_alarmset_layout) {
             manager.beginTransaction().replace(R.id.content_main, new SettingsActivity()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
             textView_01.setVisibility(View.INVISIBLE);
             textView_02.setVisibility(View.INVISIBLE);
+            textView_03.setVisibility(View.INVISIBLE);
 
         }
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

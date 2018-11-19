@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.example.dlarb.helpmybody01.PointActivity;
 import com.example.dlarb.helpmybody01.R;
 import com.example.dlarb.helpmybody01.SettingsActivity;
 import com.example.dlarb.helpmybody01.TimePickerFragment;
@@ -66,7 +67,10 @@ public class AlarmReceiver_All extends BroadcastReceiver {
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_ONE_SHOT);
 
      if(sleepalarm==false) {
-        if(soundchange==0) {
+         Intent intent1 = new Intent(context,PointActivity.class);
+         PendingIntent pi = PendingIntent.getActivity(context, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
+         if(soundchange==0) {
+
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
                     .setSmallIcon(R.drawable.all)
                     .setLargeIcon(bitmap)
@@ -74,7 +78,7 @@ public class AlarmReceiver_All extends BroadcastReceiver {
                     .setContentText("시-작!")
                     .setAutoCancel(true)
                     .setSound(soundUri)
-                    .setContentIntent(pendingIntent);
+                    .setContentIntent(pi);
 
             NotificationManager notificationManager =
                     (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -88,7 +92,7 @@ public class AlarmReceiver_All extends BroadcastReceiver {
                     .setContentText("시-작!")
                     .setAutoCancel(true)
                     .setSound(uri)
-                    .setContentIntent(pendingIntent);
+                    .setContentIntent(pi);
 
             NotificationManager notificationManager =
                     (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -96,6 +100,9 @@ public class AlarmReceiver_All extends BroadcastReceiver {
         }
      }
      else if(sleepalarm==true){}
+
+
+
 
     }
 
