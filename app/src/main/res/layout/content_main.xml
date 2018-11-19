@@ -9,31 +9,18 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <ImageView
-        android:id="@+id/imageView_b"
-        android:layout_width="231dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView_fla"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="-184dp"
-        app:srcCompat="@drawable/ballon2_turn"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="0dp" />
-
     <TextView
-        android:id="@+id/textView_fla"
+        android:id="@+id/textView_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="165dp"
-        android:text="안녕하세요!" />
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="97dp"
+        android:text="스트레칭 시작"
+        android:textSize="30sp" />
 
     <ImageView
         android:id="@+id/imageView_fla"
@@ -48,7 +35,20 @@
         android:layout_marginLeft="0dp"
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
-        android:layout_marginBottom="103dp"
+        android:layout_marginBottom="6dp"
         app:srcCompat="@drawable/c_left" />
+
+    <TextView
+        android:id="@+id/textView_02"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="167dp"
+        android:text="TextView"
+        android:textSize="50sp" />
 
 </RelativeLayout>

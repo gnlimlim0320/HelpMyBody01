@@ -17,6 +17,9 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     TextView textView_fla;
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
+
         textView_fla = (TextView) findViewById(R.id.textView_fla);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -39,6 +43,8 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
 
 
     }
@@ -83,31 +89,31 @@ public class MainActivity extends AppCompatActivity
 
         FragmentManager manager = getFragmentManager();
         ImageView imageView_fla = (ImageView) findViewById(R.id.imageView_fla);
-        ImageView imageView_bal = (ImageView) findViewById(R.id.imageView_b);
-        TextView textView_fla = (TextView) findViewById(R.id.textView_fla);
+        TextView textView_01 = (TextView) findViewById(R.id.textView_01);
+        TextView textView_02 = (TextView)findViewById(R.id.textView_02);
 
         if (id == R.id.nav_youtube_layout) {
             manager.beginTransaction().replace(R.id.content_main, new YoutubeLayout()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
-            imageView_bal.setVisibility(View.INVISIBLE);
-            textView_fla.setVisibility(View.INVISIBLE);
+            textView_01.setVisibility(View.INVISIBLE);
+            textView_02.setVisibility(View.INVISIBLE);
         } else if (id == R.id.nav_alarm_layout) {
             manager.beginTransaction().replace(R.id.content_main, new AlarmLayout()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
-            imageView_bal.setVisibility(View.INVISIBLE);
-            textView_fla.setVisibility(View.INVISIBLE);
+            textView_01.setVisibility(View.INVISIBLE);
+            textView_02.setVisibility(View.INVISIBLE);
 
         } else if (id == R.id.nav_alarmsleep_layout) {
             manager.beginTransaction().replace(R.id.content_main, new SleepLayout()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
-            imageView_bal.setVisibility(View.INVISIBLE);
-            textView_fla.setVisibility(View.INVISIBLE);
+            textView_01.setVisibility(View.INVISIBLE);
+            textView_02.setVisibility(View.INVISIBLE);
 
         } else if (id == R.id.nav_alarmset_layout) {
             manager.beginTransaction().replace(R.id.content_main, new SettingsActivity()).commit();
             imageView_fla.setVisibility(View.INVISIBLE);
-            imageView_bal.setVisibility(View.INVISIBLE);
-            textView_fla.setVisibility(View.INVISIBLE);
+            textView_01.setVisibility(View.INVISIBLE);
+            textView_02.setVisibility(View.INVISIBLE);
 
         }
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -115,4 +121,5 @@ public class MainActivity extends AppCompatActivity
         return true;
 
     }
+
 }
