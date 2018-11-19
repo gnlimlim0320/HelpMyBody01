@@ -144,6 +144,7 @@ public class MainActivity extends AppCompatActivity
             textView_03.setVisibility(View.INVISIBLE);
 
         }
+
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
         return true;
