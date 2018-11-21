@@ -16,11 +16,24 @@
 
     <Button
         android:id="@+id/button_p"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="158dp"
+        android:layout_height="64dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="203dp"
-        android:text="포인트 적립" />
+        android:layout_marginBottom="169dp"
+        android:text="포인트 적립"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="390dp"
+        android:layout_height="510dp"
+        android:layout_alignStart="@+id/button_p"
+        android:layout_alignLeft="@+id/button_p"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-102dp"
+        android:layout_marginLeft="-102dp"
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@drawable/tri" />
 
 </RelativeLayout>
