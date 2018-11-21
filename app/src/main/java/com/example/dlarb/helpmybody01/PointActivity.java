@@ -9,10 +9,8 @@ import android.widget.TextView;
 
 public class PointActivity extends AppCompatActivity {
 
-
     static int point = 0;
     int change = 0;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,22 +25,16 @@ public class PointActivity extends AppCompatActivity {
         pointbutton.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View v) {
-                        if(change==1){
+                        if(change==1) {
                             pointbutton.setClickable(false);
                         }
-
-                       else {
+                        else {
                             point += 3;
                             pointtext.setText(point + "점");
                             change=1;
                         }
-
                     }
-
                 }
-
         );
     }
-
-
 }

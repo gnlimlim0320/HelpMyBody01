@@ -9,6 +9,18 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="395dp"
+        android:layout_height="526dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="0dp"
+        app:srcCompat="@drawable/tri" />
+
     <TextView
         android:id="@+id/textView_01"
         android:layout_width="wrap_content"
@@ -20,23 +32,8 @@
         android:layout_marginLeft="39dp"
         android:layout_marginTop="97dp"
         android:text="스트레칭 시작"
+        android:textColor="@android:color/background_dark"
         android:textSize="30sp" />
-
-    <ImageView
-        android:id="@+id/imageView_fla"
-        android:layout_width="match_parent"
-        android:layout_height="295dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginBottom="6dp"
-        app:srcCompat="@drawable/c_left" />
 
     <TextView
         android:id="@+id/textView_02"
@@ -45,10 +42,11 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
-        android:layout_marginTop="167dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="161dp"
         android:text="TextView"
+        android:textColor="@android:color/background_dark"
         android:textSize="50sp" />
 
     <TextView
@@ -58,10 +56,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginBottom="175dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginBottom="216dp"
         android:text="TextView"
-        android:textSize="30sp"/>
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView_04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView_01"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-10dp"
+        android:layout_marginBottom="171dp"
+        android:textColor="@android:color/background_dark"
+        android:text="스트레칭 푸시알림을 누르면 포인트를 적립할 수 있어요!"
+        android:layout_marginLeft="-10dp"
+        android:layout_alignLeft="@+id/textView_01" />
 
 </RelativeLayout>
