@@ -2,9 +2,13 @@ package com.example.dlarb.helpmybody01;
 
 
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.Gravity;
 import android.widget.TextView;
 import android.app.DialogFragment;
@@ -19,6 +23,10 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
     static int hour;
     static int minute;
     static boolean time1;
+    static String string;
+    TextView tv;
+    String dn = "오전";
+    static int saved=0;
 
 
 
@@ -28,7 +36,9 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         final Calendar c = Calendar.getInstance();
         hour = c.get(Calendar.HOUR_OF_DAY);
-        minute = c.get(Calendar.MINUTE);
+        minute = c.get(Calendar.MINUTE);;
+        tv = (TextView) getActivity().findViewById(R.id.tv);
+
 
         TimePickerDialog tpd = new TimePickerDialog(getActivity(), this, hour, minute,
                 DateFormat.is24HourFormat(getActivity()));
@@ -58,9 +68,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         }
 
 
-        TextView tv = (TextView) getActivity().findViewById(R.id.tv);
 
-        String dn="오전";
         if (hourOfDay > 11) {
             dn="오후";
         }
@@ -75,8 +83,13 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         else {
             currentHour = hourOfDay;
         }
+        string = dn+" "+currentHour+"시 "+minute+"분부터는 알람이 울리지 않아요! \n\n";
+        tv = (TextView) getActivity().findViewById(R.id.tv);
+        tv.setText(string);
+        tv.setFreezesText(true);
+        saved=1;
 
-        tv.setText(dn+" "+currentHour+"시 "+minute+"분부터는 알람이 울리지 않아요! \n\n");
 
     }
+
 }

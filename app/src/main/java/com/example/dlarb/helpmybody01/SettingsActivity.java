@@ -1,16 +1,20 @@
 package com.example.dlarb.helpmybody01;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,21 +23,19 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.app.Activity.RESULT_OK;
 
 
-public class SettingsActivity extends android.app.Fragment {
+public class SettingsActivity extends android.app.Fragment{
     public static Uri myUri;
     public static int soundchange;
     View v;
     Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
     final int ringpicker = 1;
 
-    //  Uri soundUri1 = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
-    //  Uri soundUri2 = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
-    //  Uri soundUri3 = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALL);
 
 
     @Nullable
@@ -68,6 +70,11 @@ public class SettingsActivity extends android.app.Fragment {
             }
         }
     }
+
+
+
+
 }
+
 
 
