@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".YoutubeLayout" />
-        <activity android:name=".AlarmLayout" />
+        <activity android:name=".AlarmLayout"/>
         <activity android:name=".SleepLayout" />
         <activity android:name=".PointActivity" />
         <activity android:name=".bodypart.Waist" />
@@ -48,7 +48,8 @@
         <activity android:name=".Alarm_bodypart.WristAlarm" />
         <activity android:name=".Alarm_bodypart.ArmAlarm" />
         <activity android:name=".Alarm_bodypart.LegAlarm" />
-        <activity android:name=".Alarm_bodypart.AllAlarm" />
+        <activity android:name=".Alarm_bodypart.AllAlarm"
+            android:configChanges="orientation|screenSize"/>
         <activity android:name=".TimePickerFragment" />
         <activity android:name=".TimePickerFragment2" />
         <activity android:name=".SettingsActivity" />

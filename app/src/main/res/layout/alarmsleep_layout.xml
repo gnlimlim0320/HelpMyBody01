@@ -17,7 +17,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="23dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="45dp" />
+        android:layout_marginTop="45dp"
+        android:textColor="@android:color/background_dark" />
 
     <TextView
         android:id="@+id/tv2"
@@ -28,7 +29,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="150dp" />
+        android:layout_marginTop="150dp"
+        android:textColor="@android:color/background_dark" />
 
     <Button
         android:id="@+id/btn"
