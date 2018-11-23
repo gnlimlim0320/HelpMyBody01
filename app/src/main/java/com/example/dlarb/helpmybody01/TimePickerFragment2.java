@@ -17,13 +17,16 @@ import java.util.Calendar;
 
 
 public class TimePickerFragment2 extends DialogFragment implements TimePickerDialog.OnTimeSetListener{
-    //int prehour = TimePickerFragment.hour;
-    //int preminute = TimePickerFragment.minute;
+
     int hour;
     int minute;
     boolean time1 = TimePickerFragment.time1;
     boolean time2;
     public static boolean sleepalarm;
+    static String string;
+    TextView tv;
+    String dn = "오전";
+    static int saved=0;
 
 
 
@@ -33,9 +36,11 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
         final Calendar c = Calendar.getInstance();
         hour = c.get(Calendar.HOUR_OF_DAY);
         minute = c.get(Calendar.MINUTE);
+        tv = (TextView) getActivity().findViewById(R.id.tv2);
 
 
-       // TimePickerDialog tpd = new TimePickerDialog(getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK
+
+        // TimePickerDialog tpd = new TimePickerDialog(getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_DARK
         //        ,this, prehour, preminute, DateFormat.is24HourFormat(getActivity()));
 
         TimePickerDialog tpd = new TimePickerDialog(getActivity(),this,hour,minute,
@@ -76,7 +81,6 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
 
         TextView tv = (TextView) getActivity().findViewById(R.id.tv2);
 
-        String dn="오전";
         if(hourOfDay >11)
         {
             dn="오후";
@@ -95,8 +99,11 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
             currentHour = hourOfDay;
         }
 
-        tv.setText(dn+" "+currentHour+"시 "+minute+"분까지는 알람이 울리지 않아요! \n\n");
-
+        string = dn+" "+currentHour+"시 "+minute+"분까지는 알람이 울리지 않아요! \n\n";
+        tv.setText(string);
+        tv.setText(string);
+        tv.setFreezesText(true);
+        saved=1;
 
     }
 }

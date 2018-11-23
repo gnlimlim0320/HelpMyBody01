@@ -75,6 +75,19 @@
         android:textColor="@android:color/background_dark"
         android:textSize="25sp" />
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="128dp"
+        android:text="시작시간과 종료시간을 모두 입력해주셔야 설정됩니다"
+        android:textColor="@android:color/background_dark"
+        android:layout_marginLeft="0dp"
+        android:layout_alignLeft="@+id/textView" />
+
     =
 
 
