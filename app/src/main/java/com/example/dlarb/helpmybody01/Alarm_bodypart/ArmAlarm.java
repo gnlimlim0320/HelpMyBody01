@@ -26,7 +26,6 @@ import java.util.Calendar;
 
 
 public class ArmAlarm extends AppCompatActivity {
-    private int min = 0;
     private Intent intent;
     private AlarmManager am = null;
     private PendingIntent ServicePending = null;
