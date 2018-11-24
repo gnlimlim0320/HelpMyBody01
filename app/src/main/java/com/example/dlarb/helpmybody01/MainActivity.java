@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
     TextView textView_02;
     TextView textView_03;
     TextView textView_04;
-    int point = PointActivity.point;
+    int point = PointActivity.savedpoint;
 
     public int calcul(){
         try {
