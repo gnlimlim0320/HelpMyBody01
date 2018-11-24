@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.example.dlarb.helpmybody01.ImageAdapter;
+import com.example.dlarb.helpmybody01.ImageAdapter_neck;
 import com.example.dlarb.helpmybody01.R;
 import com.example.dlarb.helpmybody01.bodypart.Neck_Youtube.NeckYoutube1;
 import com.example.dlarb.helpmybody01.bodypart.Neck_Youtube.NeckYoutube2;
@@ -26,8 +28,9 @@ public class Neck extends AppCompatActivity {
         Intent intent = getIntent();
 
 
-        String[] waist_youtube = {"영상1","영상2","영상3","영상4","영상5"};
-        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,waist_youtube);
+        final String[] neck_youtube = {"예쁜 일자어깨 만드는 승모근 스트레칭 BEST3","목디스크 거북목에 좋은 1분 스트레칭","[즉빵 통증 완화 스트레칭] 목 결림을 바~로 풀어주는 목 스트레칭","뭉친 어깨와 목을 이완 시켜주는 요가","목스트레칭! 묘한매력 완선생님과 시원하게 목좀 풀어볼까요?"};
+        final Integer[] images = {R.drawable._neck1, R.drawable._neck2, R.drawable._neck3, R.drawable._neck4,R.drawable._neck5};
+        ListAdapter adapter = new ImageAdapter_neck(Neck.this,neck_youtube);
         ListView listView = (ListView)findViewById(R.id.neck_list);
         listView.setAdapter(adapter);
 

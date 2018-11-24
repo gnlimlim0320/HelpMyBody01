@@ -9,6 +9,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.example.dlarb.helpmybody01.ImageAdapter_neck;
+import com.example.dlarb.helpmybody01.ImageAdapter_waist;
 import com.example.dlarb.helpmybody01.R;
 import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube1;
 import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube2;
@@ -22,8 +24,8 @@ public class Waist extends AppCompatActivity {
         Intent intent = getIntent();
 
 
-        String[] waist_youtube = {"영상1","영상2"};
-        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,waist_youtube);
+        String[] waist_youtube = {"허리 좋아지는 스트레칭 BEST모음","과학적으로 검증된 허리에 좋은 스트레칭 루틴 "};
+        ListAdapter adapter = new ImageAdapter_waist(Waist.this,waist_youtube);
         ListView listView = (ListView)findViewById(R.id.waist_list);
         listView.setAdapter(adapter);
 
