@@ -92,7 +92,7 @@ public class WristAlarm extends AppCompatActivity {
         } catch (Exception ignored) {
         }
         am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 20, ServicePending);
-        Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
 
         string = "알람이 설정되어있습니다! (20분)";
         alltext.setText(string);
@@ -114,7 +114,7 @@ public class WristAlarm extends AppCompatActivity {
         } catch (Exception ignored) {
         }
         am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 30, ServicePending);
-        Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
 
         string = "알람이 설정되어있습니다! (30분)";
         alltext.setText(string);
@@ -136,7 +136,7 @@ public class WristAlarm extends AppCompatActivity {
         } catch (Exception ignored) {
         }
         am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 60, ServicePending);
-        Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
         string = "알람이 설정되어있습니다! (1시간)";
         alltext.setText(string);
     }
@@ -157,7 +157,7 @@ public class WristAlarm extends AppCompatActivity {
         } catch (Exception ignored) {
         }
         am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 120, ServicePending);
-        Toast.makeText(getBaseContext(), "알람이 설정되었습니당!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
         string = "알람이 설정되어있습니다! (2시간)";
         alltext.setText(string);
     }
@@ -167,7 +167,7 @@ public class WristAlarm extends AppCompatActivity {
         intent = new Intent(WristAlarm.this, AlarmReceiver_Wrist.class);
         ServicePending = PendingIntent.getBroadcast(
                 WristAlarm.this, 333, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        Toast.makeText(getBaseContext(), "알람이 해제되었습니당!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getBaseContext(), "알람이 해제되었습니다!", Toast.LENGTH_SHORT).show();
 
         am.cancel(ServicePending);
         string = "알람 설정이 되어 있지 않습니다";

@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.example.dlarb.helpmybody01.ImageAdapter_neck;
-import com.example.dlarb.helpmybody01.ImageAdapter_waist;
+import com.example.dlarb.helpmybody01.ImageAdpater.ImageAdapter_waist;
 import com.example.dlarb.helpmybody01.R;
 import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube1;
 import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube2;

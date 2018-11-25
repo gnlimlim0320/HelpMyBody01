@@ -37,6 +37,8 @@ public class SleepLayout extends DialogFragment{
        Button button2 = (Button)v.findViewById(R.id.btn2);
         tv = (TextView)v.findViewById(R.id.tv);
         tv2 = (TextView)v.findViewById(R.id.tv2);
+        pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences.Editor edit = pref.edit();
 
 
 
@@ -53,8 +55,6 @@ public class SleepLayout extends DialogFragment{
 
         if(saved==1) {
             string1 = TimePickerFragment.string;
-            pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            SharedPreferences.Editor edit = pref.edit();
             edit.putString("save", string1);
             edit.commit();
             String savedstring = pref.getString("save", string1);
@@ -72,8 +72,6 @@ public class SleepLayout extends DialogFragment{
 
         if(saved2==1) {
             string2 = TimePickerFragment2.string;
-            pref = PreferenceManager.getDefaultSharedPreferences(getActivity());
-            SharedPreferences.Editor edit = pref.edit();
             edit.putString("save", string2);
             edit.commit();
             String savedstring = pref.getString("save", string2);
@@ -82,5 +80,6 @@ public class SleepLayout extends DialogFragment{
         }
        return v;
     }
+
 
 }

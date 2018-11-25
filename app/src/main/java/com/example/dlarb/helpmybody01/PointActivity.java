@@ -12,7 +12,6 @@ import android.widget.TextView;
 public class PointActivity extends AppCompatActivity {
 
     static int point = 0;
-    static int change = 0;
     SharedPreferences pref;
     static int savedpoint = 0;
 
