@@ -9,11 +9,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.example.dlarb.helpmybody01.ImageAdpater.ImageAdapter_waist;
+import com.example.dlarb.helpmybody01.ImageAdpater.ImageAdapter_wrist;
 import com.example.dlarb.helpmybody01.R;
 import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube1;
 import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube2;
 import com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube.WristYoutube1;
 import com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube.WristYoutube2;
+import com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube.WristYoutube3;
 
 public class Wrist extends AppCompatActivity {
 
@@ -23,14 +26,14 @@ public class Wrist extends AppCompatActivity {
         setContentView(R.layout.wrist_layout);
         Intent intent = getIntent();
 
-        String[] waist_youtube = {"영상1","영상2"};
-        ListAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,waist_youtube);
+        String[] wrist_youtube = {"손목 통증에 좋은 운동","손목 통증-손목터널증후군 치료 방법","[즉빵 통증 완화 스트레칭] 욱씬욱씬 & 시큰시큰한 손목 통증 완화 스트레칭"};
+        ListAdapter adapter = new ImageAdapter_wrist(Wrist.this,wrist_youtube);
         ListView listView = (ListView)findViewById(R.id.wrist_list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
-                    Class[] Wrist_Youtube = new Class[]{WristYoutube1.class, WristYoutube2.class};
+                    Class[] Wrist_Youtube = new Class[]{WristYoutube1.class, WristYoutube2.class,WristYoutube3.class};
 
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

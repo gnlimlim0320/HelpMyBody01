@@ -43,6 +43,7 @@
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube5" />
         <activity android:name=".bodypart.Wrist_Youtube.WristYoutube1" />
         <activity android:name=".bodypart.Wrist_Youtube.WristYoutube2" />
+        <activity android:name=".bodypart.Wrist_Youtube.WristYoutube3" />
         <activity android:name=".Alarm_bodypart.NeckAlarm" />
         <activity android:name=".Alarm_bodypart.WaistAlarm" />
         <activity android:name=".Alarm_bodypart.WristAlarm" />
