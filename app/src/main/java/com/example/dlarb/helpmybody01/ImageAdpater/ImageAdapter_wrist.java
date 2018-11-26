@@ -21,7 +21,7 @@ public class ImageAdapter_wrist extends ArrayAdapter<String> {
     @Override
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        final Integer[] images = {R.drawable._wrist1, R.drawable._wrist2,R.drawable._wrist3};
+        final Integer[] images = {R.drawable._wrist1, R.drawable._wrist2,R.drawable._wrist3,R.drawable._wrist4,R.drawable._wrist5,R.drawable._wrist6};
         LayoutInflater imageinflater = LayoutInflater.from(getContext());
         @SuppressLint("ViewHolder") View view = imageinflater.inflate(R.layout.bodypart_image_layout, parent, false);
         String item = getItem(position);

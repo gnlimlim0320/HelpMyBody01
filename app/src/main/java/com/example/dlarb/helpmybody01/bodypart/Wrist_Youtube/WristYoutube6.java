@@ -1,8 +1,7 @@
-package com.example.dlarb.helpmybody01.bodypart.Waist_Youtube;
+package com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,7 +11,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class WaistYoutube1 extends YouTubeBaseActivity {
+public class WristYoutube6 extends YouTubeBaseActivity {
 
     YouTubePlayerView youtubeView;
     Button button;
@@ -21,16 +20,15 @@ public class WaistYoutube1 extends YouTubeBaseActivity {
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
-        setContentView(R.layout.waist_youtube1);
+        setContentView(R.layout.wrist_youtube6);
         Intent intent = getIntent();
 
-        button = (Button) findViewById(R.id.wabutton1);
-        youtubeView = (YouTubePlayerView) findViewById(R.id.waist_youtubeview1);
+        button = (Button) findViewById(R.id.wrbutton5);
+        youtubeView = (YouTubePlayerView) findViewById(R.id.wrist_youtubeview5);
         listener=new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                //youTubePlayer.loadVideo("T9jMXWFauhs");
-                youTubePlayer.loadVideo("sGuIL-QSmjw");
+                youTubePlayer.loadVideo("py3E1nuL5lU");
             }
 
             @Override

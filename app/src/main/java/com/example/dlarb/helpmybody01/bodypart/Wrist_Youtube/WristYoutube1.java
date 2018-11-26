@@ -28,7 +28,7 @@ public class WristYoutube1 extends YouTubeBaseActivity {
         listener=new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo("1mfNXp0hDww");
+               youTubePlayer.loadVideo("1mfNXp0hDww");
             }
 
             @Override
