@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.example.dlarb.helpmybody01.R;
 
-public class ImageAdapter_waist extends ArrayAdapter<String> {
-    public ImageAdapter_waist(Context context, String[] items) {
+public class ImageAdapter_arm extends ArrayAdapter<String> {
+    public ImageAdapter_arm(Context context, String[] items) {
         super(context, R.layout.bodypart_image_layout, items);
     }
 
@@ -21,7 +21,7 @@ public class ImageAdapter_waist extends ArrayAdapter<String> {
     @Override
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        final Integer[] images = {R.drawable._waist1, R.drawable._waist2,R.drawable._waist3,R.drawable._waist4,R.drawable._waist5,R.drawable._waist6};
+        final Integer[] images = {R.drawable._arm1,R.drawable._arm2,R.drawable._arm3,R.drawable._arm4,R.drawable._arm5};
         LayoutInflater imageinflater = LayoutInflater.from(getContext());
         @SuppressLint("ViewHolder") View view = imageinflater.inflate(R.layout.bodypart_image_layout, parent, false);
         String item = getItem(position);

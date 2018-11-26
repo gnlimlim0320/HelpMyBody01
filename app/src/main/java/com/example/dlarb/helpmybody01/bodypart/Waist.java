@@ -15,6 +15,7 @@ import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube2;
 import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube3;
 import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube4;
 import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube5;
+import com.example.dlarb.helpmybody01.bodypart.Waist_Youtube.WaistYoutube6;
 
 public class Waist extends AppCompatActivity {
      View v;
@@ -25,14 +26,15 @@ public class Waist extends AppCompatActivity {
         Intent intent = getIntent();
 
 
-        String[] waist_youtube = {"허리 좋아지는 스트레칭 BEST모음","과학적으로 검증된 허리에 좋은 스트레칭 루틴","허리 통증을 완화시켜주는 스트레칭 / 골반교정, 척추교정 스트레칭-콩필라테스","허리 통증 완화를 위한 요가 스트레칭 | 15분 통증 완화 요가 | 요가소년","허리스트레칭과 목스트레칭으로 내 몸을 바르게! 1편"};
+        String[] waist_youtube = {"허리 좋아지는 스트레칭 BEST모음","과학적으로 검증된 허리에 좋은 스트레칭 루틴","허리 통증을 완화시켜주는 스트레칭 / 골반교정, 척추교정 스트레칭-콩필라테스","허리 통증 완화를 위한 요가 스트레칭 | 15분 통증 완화 요가 | 요가소년","허리스트레칭과 목스트레칭으로 내 몸을 바르게! 1편",
+        "[고투더헬th] 틀어진 골반, 요추 통증, 디스크 잡는 골반 셀프 교정법///(골반교정 스트레칭)"};
         ListAdapter adapter = new ImageAdapter_waist(Waist.this,waist_youtube);
         ListView listView = (ListView)findViewById(R.id.waist_list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
-                    Class[] Waist_Youtube = new Class[]{WaistYoutube1.class, WaistYoutube2.class,WaistYoutube3.class,WaistYoutube4.class,WaistYoutube5.class};
+                    Class[] Waist_Youtube = new Class[]{WaistYoutube1.class, WaistYoutube2.class,WaistYoutube3.class,WaistYoutube4.class,WaistYoutube5.class,WaistYoutube6.class};
 
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
