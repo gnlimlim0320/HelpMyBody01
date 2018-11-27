@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <view
-        android:id="@+id/wrist_youtubeview5"
+        android:id="@+id/youtubeview"
         class="com.google.android.youtube.player.YouTubePlayerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,7 +15,7 @@
         android:layout_marginRight="0dp" />
 
     <Button
-        android:id="@+id/wrbutton5"
+        android:id="@+id/wabutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

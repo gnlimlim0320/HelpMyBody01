@@ -1,4 +1,4 @@
-package com.example.dlarb.helpmybody01.bodypart.Arm_Youtube;
+package com.example.dlarb.helpmybody01.bodypart.Leg_Youtube;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class ArmYoutube2 extends YouTubeBaseActivity {
+public class LegYoutube6 extends YouTubeBaseActivity {
 
     YouTubePlayerView youtubeView;
     Button button;
@@ -28,7 +28,7 @@ public class ArmYoutube2 extends YouTubeBaseActivity {
         listener=new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-               youTubePlayer.loadVideo("I5dfkm3T3KQ");
+                youTubePlayer.loadVideo("TM63Mn2kxww");
 
 
             }

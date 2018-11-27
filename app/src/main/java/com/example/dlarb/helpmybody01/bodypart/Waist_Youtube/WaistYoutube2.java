@@ -20,11 +20,11 @@ public class WaistYoutube2 extends YouTubeBaseActivity {
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
-        setContentView(R.layout.waist_youtube2);
+        setContentView(R.layout.body_youtube);
         Intent intent = getIntent();
 
-        button = (Button) findViewById(R.id.wabutton2);
-        youtubeView = (YouTubePlayerView) findViewById(R.id.waist_youtubeview2);
+        button = (Button) findViewById(R.id.wabutton);
+        youtubeView = (YouTubePlayerView) findViewById(R.id.youtubeview);
         listener=new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
