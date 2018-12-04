@@ -75,10 +75,11 @@ public class AlarmReceiver_All extends BroadcastReceiver {
                     .setSmallIcon(R.drawable.all)
                     .setLargeIcon(bitmap)
                     .setContentTitle("전신 스트레칭을 해주세요!")
-                    .setContentText("시-작!")
                     .setAutoCancel(true)
                     .setSound(soundUri)
-                    .setContentIntent(pi);
+                    .setContentIntent(pi)
+                    .setContentText("일어서서 기지개를 펴 주세요!");
+
 
             NotificationManager notificationManager =
                     (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -89,10 +90,11 @@ public class AlarmReceiver_All extends BroadcastReceiver {
                     .setSmallIcon(R.drawable.all)
                     .setLargeIcon(bitmap)
                     .setContentTitle("전신 스트레칭을 해주세요!")
-                    .setContentText("시-작!")
                     .setAutoCancel(true)
                     .setSound(uri)
-                    .setContentIntent(pi);
+                    .setContentIntent(pi)
+                    .setContentText("일어서서 기지개를 쭈~욱 펴 주세요!");
+
 
             NotificationManager notificationManager =
                     (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

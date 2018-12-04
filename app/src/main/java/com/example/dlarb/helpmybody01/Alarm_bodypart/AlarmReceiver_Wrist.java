@@ -61,7 +61,7 @@ public class AlarmReceiver_Wrist extends BroadcastReceiver {
                         .setSmallIcon(R.drawable.wrist)
                         .setLargeIcon(bitmap)
                         .setContentTitle("손목 스트레칭을 해주세요!")
-                        .setContentText("시-작!")
+                        .setContentText("손목을 시계 방향, 반시계 방향으로 3번씩 돌려주세요!")
                         .setAutoCancel(true)
                         .setSound(soundUri)
                         .setContentIntent(pi);
@@ -75,7 +75,7 @@ public class AlarmReceiver_Wrist extends BroadcastReceiver {
                         .setSmallIcon(R.drawable.wrist)
                         .setLargeIcon(bitmap)
                         .setContentTitle("손목 스트레칭을 해주세요!")
-                        .setContentText("시-작!")
+                        .setContentText("손목을 시계 방향, 반시계 방향으로 3번씩 돌려주세요!")
                         .setAutoCancel(true)
                         .setSound(uri)
                         .setContentIntent(pi);

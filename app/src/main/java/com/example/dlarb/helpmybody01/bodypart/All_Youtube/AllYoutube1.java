@@ -38,6 +38,8 @@ public class AllYoutube1 extends YouTubeBaseActivity {
 
             }
         };
+
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

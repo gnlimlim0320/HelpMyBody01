@@ -61,7 +61,7 @@ public class AlarmReceiver_Waist extends BroadcastReceiver {
                 NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.waist)
                         .setLargeIcon(bitmap)
-                        .setContentTitle("허리 스트레칭을 해주세요!")
+                        .setContentTitle("상체를 좌우로 회전해 주세요!")
                         .setContentText("시-작!")
                         .setAutoCancel(true)
                         .setSound(soundUri)
@@ -77,7 +77,7 @@ public class AlarmReceiver_Waist extends BroadcastReceiver {
                         .setSmallIcon(R.drawable.waist)
                         .setLargeIcon(bitmap)
                         .setContentTitle("허리 스트레칭을 해주세요!")
-                        .setContentText("시-작!")
+                        .setContentText("상체를 좌우로 회전해 주세요!")
                         .setAutoCancel(true)
                         .setSound(uri)
                         .setContentIntent(pi);

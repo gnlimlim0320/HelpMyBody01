@@ -66,7 +66,7 @@ public class AlarmReceiver_Neck extends BroadcastReceiver {
                         .setSmallIcon(R.drawable.neck)
                         .setLargeIcon(bitmap)
                         .setContentTitle("목 스트레칭을 해주세요!")
-                        .setContentText("시-작!")
+                        .setContentText("목을 시계 방향으로 3번 돌려주세요!")
                         .setAutoCancel(true)
                         .setSound(soundUri)
                         .setContentIntent(pi);
@@ -80,7 +80,7 @@ public class AlarmReceiver_Neck extends BroadcastReceiver {
                         .setSmallIcon(R.drawable.neck)
                         .setLargeIcon(bitmap)
                         .setContentTitle("목 스트레칭을 해주세요!")
-                        .setContentText("시-작!")
+                        .setContentText("목을 시계 방향으로 3번 돌려주세요!")
                         .setAutoCancel(true)
                         .setSound(uri)
                         .setContentIntent(pi);

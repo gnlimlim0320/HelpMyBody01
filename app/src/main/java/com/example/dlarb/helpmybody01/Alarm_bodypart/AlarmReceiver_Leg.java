@@ -62,7 +62,7 @@ public class AlarmReceiver_Leg extends BroadcastReceiver {
                         .setSmallIcon(R.drawable.leg)
                         .setLargeIcon(bitmap)
                         .setContentTitle("다리 스트레칭을 해주세요!")
-                        .setContentText("시-작!")
+                        .setContentText("다리를 곧게 펴고, 손이 땅바닥에 닫도록 상체를 구부려주세요!")
                         .setAutoCancel(true)
                         .setSound(soundUri)
                         .setContentIntent(pi);
@@ -76,7 +76,7 @@ public class AlarmReceiver_Leg extends BroadcastReceiver {
                         .setSmallIcon(R.drawable.leg)
                         .setLargeIcon(bitmap)
                         .setContentTitle("다리 스트레칭을 해주세요!")
-                        .setContentText("시-작!")
+                        .setContentText("다리를 곧게 펴고, 손이 땅바닥에 닫도록 상체를 구부려주세요!")
                         .setAutoCancel(true)
                         .setSound(uri)
                         .setContentIntent(pi);

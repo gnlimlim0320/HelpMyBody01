@@ -89,7 +89,7 @@ public class AllAlarm extends AppCompatActivity {
             am.cancel(ServicePending);
         } catch (Exception ignored) {
         }
-        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 1, ServicePending);
+        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 20, ServicePending);
         Toast.makeText(getBaseContext(), "알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
         string = "알람이 설정되어있습니다! (20분)";
         alltext.setText(string);
