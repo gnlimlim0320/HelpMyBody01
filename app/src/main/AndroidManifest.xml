@@ -40,6 +40,7 @@
         <activity android:name=".bodypart.Waist_Youtube.WaistYoutube4" />
         <activity android:name=".bodypart.Waist_Youtube.WaistYoutube5" />
         <activity android:name=".bodypart.Waist_Youtube.WaistYoutube6" />
+        <activity android:name=".bodypart.Waist_Youtube.WaistYoutube7" />
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube1" />
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube2" />
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube3" />

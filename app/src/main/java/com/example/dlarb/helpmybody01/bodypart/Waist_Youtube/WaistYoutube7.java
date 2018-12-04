@@ -2,7 +2,6 @@ package com.example.dlarb.helpmybody01.bodypart.Waist_Youtube;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,7 +11,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class WaistYoutube1 extends YouTubeBaseActivity {
+public class WaistYoutube7 extends YouTubeBaseActivity {
 
     YouTubePlayerView youtubeView;
     Button button;
@@ -29,7 +28,7 @@ public class WaistYoutube1 extends YouTubeBaseActivity {
         listener=new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo("T9jMXWFauhs");
+                youTubePlayer.loadVideo("6p8WbfhbEJI");
             }
 
             @Override

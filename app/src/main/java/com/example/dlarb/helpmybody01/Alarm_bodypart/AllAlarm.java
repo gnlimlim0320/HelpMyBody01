@@ -10,7 +10,9 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -39,6 +41,10 @@ public class AllAlarm extends AppCompatActivity {
         setContentView(R.layout.alarm_all);
         Intent intent = getIntent();
         alltext = (TextView) findViewById(R.id.existalarm_all);
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if(saved==1) {
             pref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -192,6 +198,18 @@ public class AllAlarm extends AppCompatActivity {
         saved=1;
         super.onBackPressed();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:{
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
 
 

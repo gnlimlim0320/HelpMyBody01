@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity
     TextView textView_03;
     TextView textView_04;
     int point = PointActivity.savedpoint;
-
+    static Toolbar toolbar;
     public int calcul(){
         try {
             final Calendar start = Calendar.getInstance();
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -88,10 +88,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
 
         switch (item.getItemId()){
             case android.R.id.home:

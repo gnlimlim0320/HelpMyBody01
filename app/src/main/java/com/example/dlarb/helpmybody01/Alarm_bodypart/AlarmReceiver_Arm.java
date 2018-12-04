@@ -73,8 +73,8 @@ public class AlarmReceiver_Arm extends BroadcastReceiver {
                 NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
                         .setSmallIcon(R.drawable.arm)
                         .setLargeIcon(bitmap)
-                        .setContentTitle("팔을 앞으로 쭈~욱 뻗어주세요!")
-                        .setContentText("시-작!")
+                        .setContentTitle("팔 스트레칭을 해주세요!")
+                        .setContentText("팔을 앞으로 쭈~욱 뻗어주세요!")
                         .setAutoCancel(true)
                         .setSound(uri)
                         .setContentIntent(pi);

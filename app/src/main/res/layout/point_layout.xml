@@ -20,9 +20,9 @@
         android:layout_height="64dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="169dp"
+        android:layout_marginBottom="212dp"
         android:text="포인트 적립"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -35,5 +35,27 @@
         android:layout_marginLeft="-102dp"
         android:layout_marginBottom="0dp"
         app:srcCompat="@drawable/tri" />
+
+    <Button
+        android:id="@+id/homebutton"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="137dp"
+        android:text="HOME으로 가기" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 
 </RelativeLayout>

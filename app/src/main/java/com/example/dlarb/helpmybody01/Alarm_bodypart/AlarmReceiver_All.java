@@ -34,8 +34,6 @@ public class AlarmReceiver_All extends BroadcastReceiver {
     Uri uri = SettingsActivity.myUri;
     int soundchange = 0;
 
-    // Ringtone r= RingtoneManager.getRingtone(context,notification);
-
     @Override
     public void onReceive(final Context context, Intent intent) {
         soundchange = SettingsActivity.soundchange;
