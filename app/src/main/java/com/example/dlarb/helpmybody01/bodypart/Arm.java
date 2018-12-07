@@ -3,6 +3,8 @@ package com.example.dlarb.helpmybody01.bodypart;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -31,6 +33,9 @@ public class Arm extends AppCompatActivity {
         setContentView(R.layout.arm_layout);
         Intent intent = getIntent();
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String[] arm_youtube = {"팔이 결릴 때 하는 !!정확한!! 스트레칭을 배워봐요",
                 "맨손으로 쉽게! 팔뚝 뭉친 근육 쉽게 스트레칭!","오십견예방! 팔 많이 쓰시는 분들! 어서 시작합시다~~",
@@ -51,5 +56,16 @@ public class Arm extends AppCompatActivity {
                     }
 
                 });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:{
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

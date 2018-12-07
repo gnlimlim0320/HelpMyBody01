@@ -2,6 +2,10 @@ package com.example.dlarb.helpmybody01.bodypart.Arm_Youtube;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatCallback;
+import android.support.v7.app.AppCompatDelegate;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,6 +20,8 @@ public class ArmYoutube4 extends YouTubeBaseActivity {
     YouTubePlayerView youtubeView;
     Button button;
     YouTubePlayer.OnInitializedListener listener;
+    private AppCompatDelegate delegate;
+    private AppCompatCallback callback;
 
     @Override
     protected void onCreate(Bundle bundle){
@@ -23,6 +29,13 @@ public class ArmYoutube4 extends YouTubeBaseActivity {
         setContentView(R.layout.body_youtube);
         Intent intent = getIntent();
 
+        delegate = AppCompatDelegate.create(this,callback);
+        delegate.onCreate(bundle);
+        delegate.setContentView(R.layout.body_youtube);
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar2);
+        delegate.setSupportActionBar(toolbar);
+        delegate.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         button = (Button) findViewById(R.id.wabutton);
         youtubeView = (YouTubePlayerView) findViewById(R.id.youtubeview);
         listener=new YouTubePlayer.OnInitializedListener() {
@@ -45,6 +58,16 @@ public class ArmYoutube4 extends YouTubeBaseActivity {
             }
 
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:{
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

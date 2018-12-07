@@ -3,6 +3,8 @@ package com.example.dlarb.helpmybody01.bodypart;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -25,6 +27,9 @@ public class Neck extends AppCompatActivity {
         setContentView(R.layout.neck_layout);
         Intent intent = getIntent();
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         final String[] neck_youtube = {"예쁜 일자어깨 만드는 승모근 스트레칭 BEST3","목디스크 거북목에 좋은 1분 스트레칭","[즉빵 통증 완화 스트레칭] 목 결림을 바~로 풀어주는 목 스트레칭","뭉친 어깨와 목을 이완 시켜주는 요가","목스트레칭! 묘한매력 완선생님과 시원하게 목좀 풀어볼까요?"};
         ListAdapter adapter = new ImageAdapter_neck(Neck.this,neck_youtube);
@@ -44,5 +49,16 @@ public class Neck extends AppCompatActivity {
                     }
 
                 });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:{
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

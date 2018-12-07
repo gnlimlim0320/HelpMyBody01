@@ -1,5 +1,6 @@
 package com.example.dlarb.helpmybody01;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.FragmentManager;
 import android.view.View;
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity
         TextView textView_03 = (TextView)findViewById(R.id.textView_03);
         TextView textView_04 = (TextView)findViewById(R.id.textView_04);
 
+
         if (id == R.id.nav_youtube_layout) {
             manager.beginTransaction().replace(R.id.content_main, new YoutubeLayout()).commit();
             textView_01.setVisibility(View.INVISIBLE);
@@ -139,6 +141,10 @@ public class MainActivity extends AppCompatActivity
             textView_03.setVisibility(View.INVISIBLE);
             textView_04.setVisibility(View.INVISIBLE);
 
+        }else if(id == R.id.nav_home_layout){
+            Intent intent = new Intent(getApplication(),MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         }
 
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

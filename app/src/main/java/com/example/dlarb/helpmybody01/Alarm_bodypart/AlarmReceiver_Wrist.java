@@ -30,6 +30,7 @@ public class AlarmReceiver_Wrist extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent){
+        soundchange = SettingsActivity.soundchange;
         this.context = context;
         PowerManager powerManager=(PowerManager)context.getSystemService(Context.POWER_SERVICE);
         @SuppressLint("InvalidWakeLockTag") PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,"");

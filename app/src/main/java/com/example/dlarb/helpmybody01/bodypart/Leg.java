@@ -3,6 +3,8 @@ package com.example.dlarb.helpmybody01.bodypart;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -31,6 +33,9 @@ public class Leg extends AppCompatActivity {
         setContentView(R.layout.leg_layout);
         Intent intent = getIntent();
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String[] leg_youtube = {"스쿼트 하는데 다리가 두꺼워지는것같다면? (하체스트레칭,하체다이어트)","저녁에도 아침같은 다리 만들기! 골반교정으로 하비탈출!)",
         "다리살 붓기 빨리 빼는 스트레칭 3가지","하루 10분 하체 스트레칭. [데스런]",
@@ -51,5 +56,16 @@ public class Leg extends AppCompatActivity {
                     }
 
                 });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:{
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

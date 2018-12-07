@@ -3,6 +3,8 @@ package com.example.dlarb.helpmybody01.bodypart;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -27,6 +29,9 @@ public class All extends AppCompatActivity {
         setContentView(R.layout.all_layout);
         Intent intent = getIntent();
 
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar2);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         String[] all_youtube = {"데일리 전신스트레칭 (상체.하체 요약)","초간단! 전신 스트레칭 끝판왕 BEST5",
                 "[Playing Pilates]전신 스트레칭 10 min★Full Body Stretch",
@@ -48,5 +53,16 @@ public class All extends AppCompatActivity {
                     }
 
                 });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch (item.getItemId()){
+            case android.R.id.home:{
+                finish();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
