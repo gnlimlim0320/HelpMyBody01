@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class ImageAdapter extends ArrayAdapter<String> {
+public class ImageAdapter extends ArrayAdapter<String> { // youtube 메뉴에서 각 listview에 이미지를 첨부해주기 위한 클래스
     public ImageAdapter(Context context, String[] items) {
         super(context, R.layout.bodypart_image_layout, items);
     }

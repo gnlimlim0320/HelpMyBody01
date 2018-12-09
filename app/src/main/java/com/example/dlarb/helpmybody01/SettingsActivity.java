@@ -29,7 +29,7 @@ import android.widget.Toast;
 import static android.app.Activity.RESULT_OK;
 
 
-public class SettingsActivity extends android.app.Fragment{
+public class SettingsActivity extends android.app.Fragment{ // 알람음 변경 설정할 수 있는 클래스
     public static Uri myUri;
     public static int soundchange;
     View v;
@@ -53,7 +53,7 @@ public class SettingsActivity extends android.app.Fragment{
                     public void onClick(View v) {
                         startActivityForResult(intent, ringpicker);
                     }
-                }
+                } // 링피커를 통해 알림음을 바꿔줄 수 있음
         );
         return v;
     }
@@ -63,7 +63,7 @@ public class SettingsActivity extends android.app.Fragment{
             switch (requestCode) {
                 case 1:
                     myUri = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
-                    soundchange=1;
+                    soundchange=1; // 알람음이 바뀌면 soundchange가 1이 되어 alarmreceiver에 넘어가게 됨 (알람음 변경 인식 변수)
                     break;
                 default:
                     break;

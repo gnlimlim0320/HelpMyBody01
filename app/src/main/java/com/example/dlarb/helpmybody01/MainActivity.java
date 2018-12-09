@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
     TextView textView_04;
     int point = PointActivity.savedpoint;
     static Toolbar toolbar;
-    public int calcul(){
+    public int calcul(){   // 스트레칭 시작 일수를 카운트 해줌. 처음으로 이 어플을 실행한 순간부터 시작
         try {
             final Calendar start = Calendar.getInstance();
             Calendar today = Calendar.getInstance();
@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -113,7 +112,7 @@ public class MainActivity extends AppCompatActivity
         TextView textView_04 = (TextView)findViewById(R.id.textView_04);
 
 
-        if (id == R.id.nav_youtube_layout) {
+        if (id == R.id.nav_youtube_layout) { // 네비게이션 바에서 각 메뉴로 넘어감. 메인 화면에 있는 텍스트뷰들이 사라지지 않아서 setVisibility 추가해줌
             manager.beginTransaction().replace(R.id.content_main, new YoutubeLayout()).commit();
             textView_01.setVisibility(View.INVISIBLE);
             textView_02.setVisibility(View.INVISIBLE);
@@ -141,7 +140,7 @@ public class MainActivity extends AppCompatActivity
             textView_03.setVisibility(View.INVISIBLE);
             textView_04.setVisibility(View.INVISIBLE);
 
-        }else if(id == R.id.nav_home_layout){
+        }else if(id == R.id.nav_home_layout){  // 다른 메뉴와 다르게 홈은 transaction이 아니라 intent 사용해줌. 대신 setFlag를 통해 전의 intent들을 비움.
             Intent intent = new Intent(getApplication(),MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);

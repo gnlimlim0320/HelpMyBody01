@@ -26,7 +26,7 @@ import com.example.dlarb.helpmybody01.bodypart.Waist;
 import com.example.dlarb.helpmybody01.bodypart.Wrist;
 
 
-public class YoutubeLayout extends Fragment {
+public class YoutubeLayout extends Fragment { // youtube 메뉴. listview를 누르면 해당하게 intent됨
     View v;
     @Nullable
     @Override

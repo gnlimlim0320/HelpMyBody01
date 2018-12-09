@@ -78,7 +78,7 @@ public class AllAlarm extends AppCompatActivity {
                 });
     }
 
-    void setAlarm() {
+    void setAlarm() { // 위의 리스트뷰에서 선택하면 각자 해당하는 알람시간 간격으로 울림
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         intent = new Intent(AllAlarm.this, AlarmReceiver_All.class);
         Calendar calendar = Calendar.getInstance();
@@ -94,12 +94,12 @@ public class AllAlarm extends AppCompatActivity {
             am.cancel(ServicePending);
         } catch (Exception ignored) {
         }
-        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 20, ServicePending);
+        am.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime(), 6000 * 20, ServicePending); //20분
         Toast.makeText(getBaseContext(), "알람이 설정되었습니다!", Toast.LENGTH_SHORT).show();
         string = "전신 알람이 설정되어있습니다! (20분)";
         alltext.setText(string);
         pref = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor edit = pref.edit();
+        SharedPreferences.Editor edit = pref.edit(); // sharedpreference를 통해 사용자가 뒤로갔다가 다시 들어와도 알람 설정을 확인할 수 있게 함
         edit.putString("save", string);
         edit.commit();
         saved=1;
@@ -202,7 +202,7 @@ public class AllAlarm extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item){ // 뒤로가기버튼 추가
         switch (item.getItemId()){
             case android.R.id.home:{
                 finish();

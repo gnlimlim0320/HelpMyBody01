@@ -70,7 +70,8 @@ public class TimePickerFragment2 extends DialogFragment implements TimePickerDia
             time2 = true;
         }
 
-        if(time1==false && time2 == false){
+        if(time1==false && time2 == false){ // 다른것은 timepicker와 같지만 여기서 다른 점은 timepickerfragment에서 받아온 변수값이 false이고
+                                            // 여기서의 변수도 false여야지만 취침모드가 실행된다는 점. 여기서의 sleepalarm은 alarmreceiver로 넘어감
             sleepalarm = true;
         }
         else{

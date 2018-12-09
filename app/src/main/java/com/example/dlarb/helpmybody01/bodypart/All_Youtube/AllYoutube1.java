@@ -44,7 +44,7 @@ public class AllYoutube1 extends YouTubeBaseActivity implements AppCompatCallbac
         listener=new YouTubePlayer.OnInitializedListener() {
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                youTubePlayer.loadVideo("xNYJud41I_c");
+                youTubePlayer.loadVideo("xNYJud41I_c"); // 각 유튜브의 주소의 뒷부분. 아이디로 작용함
 
 
             }
@@ -59,7 +59,7 @@ public class AllYoutube1 extends YouTubeBaseActivity implements AppCompatCallbac
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                youtubeView.initialize("AIzaSyCvDRDZUCGB5-HggR-LTbA34VXrJkGsi1I",listener);
+                youtubeView.initialize("AIzaSyCvDRDZUCGB5-HggR-LTbA34VXrJkGsi1I",listener); // youtube 키코드. 버튼을 누르면 실행됨
             }
 
         });
@@ -82,7 +82,7 @@ public class AllYoutube1 extends YouTubeBaseActivity implements AppCompatCallbac
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item){ // 뒤로가기버튼
         switch (item.getItemId()){
             case android.R.id.home:{
                 finish();

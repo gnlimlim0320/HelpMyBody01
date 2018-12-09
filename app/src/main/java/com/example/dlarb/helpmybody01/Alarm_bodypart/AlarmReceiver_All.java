@@ -47,7 +47,7 @@ public class AlarmReceiver_All extends BroadcastReceiver {
 
         PendingIntent pendingIntent;
 
-        if (sleepalarm == false) {
+        if (sleepalarm == false) { // sleepalarm 이 false이면 취침모드 off를 의미함 따라서 알람이 울림
             Toast toast = Toast.makeText(context, "전신 스트레칭 시간이에요!", Toast.LENGTH_LONG);
             toast.setGravity(Gravity.TOP, 0, 200);
             toast.show();
@@ -64,10 +64,10 @@ public class AlarmReceiver_All extends BroadcastReceiver {
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.all);
         PendingIntent pendingIntent = PendingIntent.getActivity(context,0,intent,PendingIntent.FLAG_ONE_SHOT);
 
-     if(sleepalarm==false) {
+     if(sleepalarm==false) {// sleepalarm 이 false이면 취침모드 off를 의미함 따라서 알람이 울림
          Intent intent1 = new Intent(context,PointActivity.class);
          PendingIntent pi = PendingIntent.getActivity(context, 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-         if(soundchange==0) {
+         if(soundchange==0) { // sound가 바뀌지 않았다면 그대로 재생
 
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
                     .setSmallIcon(R.drawable.all)
@@ -76,14 +76,14 @@ public class AlarmReceiver_All extends BroadcastReceiver {
                     .setAutoCancel(true)
                     .setSound(soundUri)
                     .setContentIntent(pi)
-                    .setContentText("일어서서 기지개를 펴 주세요!");
+                    .setContentText("일어서서 기지개를 쭈~욱 켜 주세요!");
 
 
             NotificationManager notificationManager =
                     (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.notify(5, notificationBuilder.build());
         }
-        else if(soundchange==1){
+        else if(soundchange==1){ //sound가 바뀌면 바뀐 uri로 변경되어 재생
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
                     .setSmallIcon(R.drawable.all)
                     .setLargeIcon(bitmap)
@@ -91,7 +91,7 @@ public class AlarmReceiver_All extends BroadcastReceiver {
                     .setAutoCancel(true)
                     .setSound(uri)
                     .setContentIntent(pi)
-                    .setContentText("일어서서 기지개를 쭈~욱 펴 주세요!");
+                    .setContentText("일어서서 기지개를 쭈~욱 켜 주세요!");
 
 
             NotificationManager notificationManager =
@@ -99,7 +99,7 @@ public class AlarmReceiver_All extends BroadcastReceiver {
             notificationManager.notify(5, notificationBuilder.build());
         }
      }
-     else if(sleepalarm==true){}
+     else if(sleepalarm==true){} // sleepalarm 이 true일 때에는 mute.
 
 
 

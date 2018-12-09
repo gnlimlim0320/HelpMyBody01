@@ -61,7 +61,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
         datetime.set(Calendar.HOUR_OF_DAY, hourOfDay);
         datetime.set(Calendar.MINUTE, minute);
 
-        if (datetime.getTimeInMillis() > c.getTimeInMillis()) {
+        if (datetime.getTimeInMillis() > c.getTimeInMillis()) { // 취침모드 실행을 위한 변수값 입력
             time1 = true;
         } else {
             time1= false;
@@ -69,7 +69,7 @@ public class TimePickerFragment extends DialogFragment implements TimePickerDial
 
 
 
-        if (hourOfDay > 11) {
+        if (hourOfDay > 11) { // 이 아래에는 sleeplayout화면에 스트링을 보기 쉽게 보여주기 위해 hour 값을 조정
             dn="오후";
         }
 

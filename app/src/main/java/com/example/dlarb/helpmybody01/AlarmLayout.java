@@ -28,7 +28,7 @@ import com.example.dlarb.helpmybody01.Alarm_bodypart.NeckAlarm;
 import com.example.dlarb.helpmybody01.Alarm_bodypart.WaistAlarm;
 import com.example.dlarb.helpmybody01.Alarm_bodypart.WristAlarm;
 
-public class AlarmLayout extends Fragment {
+public class AlarmLayout extends Fragment { // 알람 메뉴에서 각 해당하는 신체부위 클래스를 intent 넘겨주기 위한 클래스.
     View v;
     @Nullable
     @Override
