@@ -22,6 +22,7 @@ import com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube.WristYoutube3;
 import com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube.WristYoutube4;
 import com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube.WristYoutube5;
 import com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube.WristYoutube6;
+import com.example.dlarb.helpmybody01.bodypart.Wrist_Youtube.WristYoutube7;
 
 public class Wrist extends AppCompatActivity {
 
@@ -35,14 +36,15 @@ public class Wrist extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        String[] wrist_youtube = {"손목 통증에 좋은 운동","손목 통증-손목터널증후군 치료 방법","[즉빵 통증 완화 스트레칭] 욱씬욱씬 & 시큰시큰한 손목 통증 완화 스트레칭","손목터널증후군 스트레칭 by 꽃보다손목조","[퀵팁] 여성에게 더 많이 발생하는 '손목터널증후군' 자가진단 & 예방운동 | 쉐어하우스","손목터널증후근 자가진단법과 스트레칭 [미스터빡,조제알통]"};
+        String[] wrist_youtube = {"손목 통증에 좋은 운동","손목 통증-손목터널증후군 치료 방법","[즉빵 통증 완화 스트레칭] 욱씬욱씬 & 시큰시큰한 손목 통증 완화 스트레칭","손목터널증후군 스트레칭 by 꽃보다손목조","[퀵팁] 여성에게 더 많이 발생하는 '손목터널증후군' 자가진단 & 예방운동 | 쉐어하우스","손목터널증후근 자가진단법과 스트레칭 [미스터빡,조제알통]",
+        "손가락/손목 통증&저림(손목터널증후군)에 좋은 스트레칭(전완근 스트레칭)"};
         ListAdapter adapter = new ImageAdapter_wrist(Wrist.this,wrist_youtube);
         ListView listView = (ListView)findViewById(R.id.wrist_list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
-                    Class[] Wrist_Youtube = new Class[]{WristYoutube1.class, WristYoutube2.class,WristYoutube3.class,WristYoutube4.class,WristYoutube5.class,WristYoutube6.class};
+                    Class[] Wrist_Youtube = new Class[]{WristYoutube1.class, WristYoutube2.class,WristYoutube3.class,WristYoutube4.class,WristYoutube5.class,WristYoutube6.class,WristYoutube7.class};
 
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

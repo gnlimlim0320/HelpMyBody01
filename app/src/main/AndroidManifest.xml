@@ -43,6 +43,7 @@
         <activity android:name=".bodypart.Waist_Youtube.WaistYoutube5" />
         <activity android:name=".bodypart.Waist_Youtube.WaistYoutube6" />
         <activity android:name=".bodypart.Waist_Youtube.WaistYoutube7" />
+        <activity android:name=".bodypart.Waist_Youtube.WaistYoutube8" />
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube1" />
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube2" />
         <activity android:name=".bodypart.Neck_Youtube.NeckYoutube3" />
@@ -54,6 +55,7 @@
         <activity android:name=".bodypart.Wrist_Youtube.WristYoutube4" />
         <activity android:name=".bodypart.Wrist_Youtube.WristYoutube5" />
         <activity android:name=".bodypart.Wrist_Youtube.WristYoutube6" />
+        <activity android:name=".bodypart.Wrist_Youtube.WristYoutube7" />
         <activity android:name=".bodypart.Arm_Youtube.ArmYoutube1" />
         <activity android:name=".bodypart.Arm_Youtube.ArmYoutube2" />
         <activity android:name=".bodypart.Arm_Youtube.ArmYoutube3" />
