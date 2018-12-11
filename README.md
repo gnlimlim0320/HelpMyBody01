@@ -1,18 +1,26 @@
-HELP MY BODY!
+# Help My Body!
+## 앱의 설명
+Help My Body는 일정한 간격으로 스트레칭 푸시 알림을 주는 앱입니다.
+스트레칭을 자주 잊어버리거나 번거로움을 느껴 스트레칭을 하지 않는 분들에게 안성맞춤입니다.
+고려대학교 18학번 임규나가 제작하였습니다.
 
-HelpMyBody is an application that alerts you to stretching at regular intervals. It has a sleep mode, an alert tone setting, and YouTube videos.
+## 앱의 기능
+### 1. 스트레칭 알림
+목, 허리, 손목, 팔, 다리, 전신에 해당하는 푸시 알림을 받아보실 수 있습니다.
+20분, 30분, 1시간, 2시간 간격으로 푸시 알림을 설정할 수 있으며, 알림을 취소할 수도 있습니다.
+푸시 알림은 간단한 스트레칭을 권유하는 메시지가 담겨 있습니다.
 
+### 2. 포인트 적립
+스트레칭을 동기부여 하기 위한 하나의 제도입니다. 스트레칭이 번거로워 하지 않았던 사용자들을 위한 기능입니다. 한 푸시알림당 3포인트를 적립하실 수 있으며 기프티콘과 교환 가능하게 구현하려고 합니다. 아직은 앱에서 광고 수익을 낼 수 없으므로 기프티콘 교환기능은 추가하지 않았으나, 포인트 적립 제도만이라도 구현하였습니다.
 
-Features
-1. Stretching Alarm :
-    Users can specify an interval of push notification at each body part. The alarm interval can be 20min, 30min, 1hour, 2hour.
-    
-2. Youtube :
-    Help My Body organizes videos, arranges videos, and provides videos at each body part.
-    
-3. Sleep Mode :
-    Users can mute alarm at night. Users can set time to sleep.
+### 3. 취침 모드
+사용자의 수면의 질을 보장하기 위해 만들었습니다. 
+사용자가 TimePicker를 통해 취침모드 시작시간과 종료시간을 입력하면, 그 시간대에는 알림이 울리지 않습니다.
 
-4. Alarm tone setting :
-    Users can change the alarm tone.
+### 4. 알림음 변경 설정
+기존 설정된 알림음을 변경하고 싶으시다면, 이 기능을 이용하시면 됩니다!
+푸시 알림과 같이 울리는 알림음을 RingPicker를 통해 설정하실 수 있습니다.
 
+### 5. Youtube 영상 제공
+목, 허리, 손목, 팔, 다리, 전신의 카테고리로 분류하여 영상을 정리해놓았습니다.
+원하시는 Youtube 스트레칭 영상을 선택하시고, Play 버튼을 누르면 영상이 재생됩니다.
